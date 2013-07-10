@@ -19,6 +19,8 @@
 		BBC83E5A178B963D00E94DA1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC83E59178B963D00E94DA1 /* ViewController.m */; };
 		BBC83E5D178B963D00E94DA1 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC83E5B178B963D00E94DA1 /* ViewController_iPhone.xib */; };
 		BBC83E60178B963D00E94DA1 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC83E5E178B963D00E94DA1 /* ViewController_iPad.xib */; };
+		BBC83E67178B96B200E94DA1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC83E66178B96B200E94DA1 /* Social.framework */; };
+		BBC83E69178B99EF00E94DA1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC83E68178B99EF00E94DA1 /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		BBC83E59178B963D00E94DA1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BBC83E5C178B963D00E94DA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		BBC83E5F178B963D00E94DA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		BBC83E66178B96B200E94DA1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		BBC83E68178B99EF00E94DA1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBC83E69178B99EF00E94DA1 /* Accounts.framework in Frameworks */,
+				BBC83E67178B96B200E94DA1 /* Social.framework in Frameworks */,
 				BBC83E41178B963D00E94DA1 /* UIKit.framework in Frameworks */,
 				BBC83E43178B963D00E94DA1 /* Foundation.framework in Frameworks */,
 				BBC83E45178B963D00E94DA1 /* CoreGraphics.framework in Frameworks */,
@@ -75,6 +81,8 @@
 		BBC83E3F178B963D00E94DA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BBC83E68178B99EF00E94DA1 /* Accounts.framework */,
+				BBC83E66178B96B200E94DA1 /* Social.framework */,
 				BBC83E40178B963D00E94DA1 /* UIKit.framework */,
 				BBC83E42178B963D00E94DA1 /* Foundation.framework */,
 				BBC83E44178B963D00E94DA1 /* CoreGraphics.framework */,
