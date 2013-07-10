@@ -14,5 +14,6 @@
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     IBOutlet UITableView *twitterTableView;
+    NSArray *twitterFeed;
 }
 @end

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
+#import "CustomCell.h"
 
 @interface ViewController ()
 
@@ -51,17 +52,18 @@
                                     
                                     //get response code
                                     NSInteger responseCode = [urlResponse statusCode];
-                                    
+                                     
                                     if (responseCode == 200) {
                                     
-                                        //json object response
-                                        NSArray *twitterFeed = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
+                                        //json object response data
+                                        twitterFeed = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
                                         
-                                        if (twitterFeed != nil) {
+                                        //reload tableview
+                                        [twitterTableView reloadData];
                                             NSLog(@"%@", [twitterFeed description]);
                                             
                                             
-                                        }
+                                        
                                         
                                     }
                                     
@@ -85,6 +87,40 @@
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+{
+    if (twitterFeed != nil) {
+        return [twitterFeed count];
+    }
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCellView" owner:self options:nil];
+    
+    CustomCell *cell = (CustomCell *) [nib objectAtIndex:0];
+    
+    if (cell != nil) {
+        NSDictionary *tweetDictionary = [twitterFeed objectAtIndex:indexPath.row];
+        if (tweetDictionary != nil) {
+            
+            cell.tweetLabel.text = (NSString *)[tweetDictionary objectForKey:@"text"];
+            cell.dateLabel.text = (NSString *)[tweetDictionary objectForKey:@"created_at"];
+        }
+        return cell;
+    }
+    
+    return nil;
+}
+
+
+//custom cell height
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return 71;
 }
 
 - (void)didReceiveMemoryWarning
