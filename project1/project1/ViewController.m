@@ -85,6 +85,9 @@
         }
     }
     
+    
+    
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -106,7 +109,7 @@
     if (cell != nil) {
         NSDictionary *tweetDictionary = [twitterFeed objectAtIndex:indexPath.row];
         if (tweetDictionary != nil) {
-            
+                        
             cell.tweetLabel.text = (NSString *)[tweetDictionary objectForKey:@"text"];
             cell.dateLabel.text = (NSString *)[tweetDictionary objectForKey:@"created_at"];
         }
@@ -128,5 +131,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end

@@ -14,6 +14,7 @@
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     IBOutlet UITableView *twitterTableView;
+    NSDateFormatter *formattedDate;
     NSArray *twitterFeed;
 }
 @end
