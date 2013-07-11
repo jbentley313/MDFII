@@ -27,6 +27,11 @@
 - (void)viewDidLoad
 {
     NSLog(@"%@", tweetObject);
+    
+    textLabel.text = (NSString *)[tweetObject objectForKey:@"text"];
+    datePosted.text = (NSString *)[tweetObject objectForKey:@"created_at"];
+    
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

@@ -11,6 +11,9 @@
 @interface DetailsViewController : ViewController 
 {
     NSDictionary *tweetObject;
+    IBOutlet UILabel *text;
+    IBOutlet UILabel *datePosted;
+    
 }
 @property(strong) IBOutlet UILabel *textLabel;
 

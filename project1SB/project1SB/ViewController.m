@@ -150,7 +150,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-//segue
+//segue to pass info and display details
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"detailsSeg"]) {
@@ -158,9 +158,11 @@
         NSInteger row = [twitterTableView.indexPathForSelectedRow row];
         NSDictionary *tweetSelected = [twitterFeed objectAtIndex:row];
         
-        DetailsViewController *tweetDetailV = (DetailsViewController *)segue.destinationViewController;
+        DetailsViewController *tweetDetailViewController = (DetailsViewController *)segue.destinationViewController;
         
-        tweetDetailV.tweetObject = tweetSelected;
+        
+        //set the tweetObject Dictionary to selected tweet
+        tweetDetailViewController.tweetObject = tweetSelected;
         
         
     }
