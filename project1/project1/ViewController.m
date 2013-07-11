@@ -10,12 +10,17 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 #import "CustomCell.h"
+#import "DetailsViewController.h"
+
+
+
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+@synthesize handler;
 
 - (void)viewDidLoad
 {
@@ -52,17 +57,17 @@
                                     
                                     //get response code
                                     NSInteger responseCode = [urlResponse statusCode];
-                                     
-                                    if (responseCode == 200) {
                                     
+                                    if (responseCode == 200) {
+                                        
                                         //json object response data
                                         twitterFeed = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
                                         
                                         //reload tableview
                                         [twitterTableView reloadData];
-                                            NSLog(@"%@", [twitterFeed description]);
-                                            
-                                            
+                                        NSLog(@"%@", [twitterFeed description]);
+                                        
+                                        
                                         
                                         
                                     }
@@ -81,7 +86,7 @@
                     
                 }
             }];
-                                                                                               
+            
         }
     }
     
@@ -109,9 +114,15 @@
     if (cell != nil) {
         NSDictionary *tweetDictionary = [twitterFeed objectAtIndex:indexPath.row];
         if (tweetDictionary != nil) {
-                        
+            
             cell.tweetLabel.text = (NSString *)[tweetDictionary objectForKey:@"text"];
             cell.dateLabel.text = (NSString *)[tweetDictionary objectForKey:@"created_at"];
+            
+            
+            
+            
+            
+            cell.icon.image = (UIImage *) [tweetDictionary objectForKey:@"default_profile_image"];
         }
         return cell;
     }
@@ -132,6 +143,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+//selected row method
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //    GroceryInfo *info = [groceryArray objectAtIndex:indexPath.row];
+    //
+        DetailsViewController *viewcontroller = [[DetailsViewController alloc] initWithNibName:@"DetailsViewController" bundle:nil];
+        [self presentViewController:viewcontroller animated:YES completion:nil];
+    //
+    //    viewcontroller.GroceryInfo = info;
+    
+    viewcontroller.handler = ^(NSDictionary* tweetDictionary)
+    {
+        
+    };
+}
 
 @end

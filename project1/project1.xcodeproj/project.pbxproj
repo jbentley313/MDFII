@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB096C21178E27EA00978387 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB096C1F178E27EA00978387 /* DetailsViewController.m */; };
+		BB096C22178E27EA00978387 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB096C20178E27EA00978387 /* DetailsViewController.xib */; };
 		BB14FAA9178CF0E3007E1648 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14FAA8178CF0E3007E1648 /* CustomCell.m */; };
 		BB14FAAB178CF11B007E1648 /* CustomCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB14FAAA178CF11B007E1648 /* CustomCellView.xib */; };
+		BB14FAAE178D1255007E1648 /* TweetDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14FAAD178D1255007E1648 /* TweetDetail.m */; };
 		BBC83E41178B963D00E94DA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC83E40178B963D00E94DA1 /* UIKit.framework */; };
 		BBC83E43178B963D00E94DA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC83E42178B963D00E94DA1 /* Foundation.framework */; };
 		BBC83E45178B963D00E94DA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC83E44178B963D00E94DA1 /* CoreGraphics.framework */; };
@@ -25,9 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB096C1E178E27EA00978387 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		BB096C1F178E27EA00978387 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		BB096C20178E27EA00978387 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		BB14FAA7178CF0E3007E1648 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		BB14FAA8178CF0E3007E1648 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		BB14FAAA178CF11B007E1648 /* CustomCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCellView.xib; sourceTree = "<group>"; };
+		BB14FAAC178D1255007E1648 /* TweetDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDetail.h; sourceTree = "<group>"; };
+		BB14FAAD178D1255007E1648 /* TweetDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDetail.m; sourceTree = "<group>"; };
 		BBC83E3D178B963D00E94DA1 /* project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC83E40178B963D00E94DA1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BBC83E42178B963D00E94DA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -104,7 +112,12 @@
 				BB14FAA8178CF0E3007E1648 /* CustomCell.m */,
 				BB14FAAA178CF11B007E1648 /* CustomCellView.xib */,
 				BBC83E5B178B963D00E94DA1 /* ViewController_iPhone.xib */,
+				BB14FAAC178D1255007E1648 /* TweetDetail.h */,
+				BB14FAAD178D1255007E1648 /* TweetDetail.m */,
 				BBC83E47178B963D00E94DA1 /* Supporting Files */,
+				BB096C1E178E27EA00978387 /* DetailsViewController.h */,
+				BB096C1F178E27EA00978387 /* DetailsViewController.m */,
+				BB096C20178E27EA00978387 /* DetailsViewController.xib */,
 			);
 			path = project1;
 			sourceTree = "<group>";
@@ -180,6 +193,7 @@
 				BBC83E57178B963D00E94DA1 /* Default-568h@2x.png in Resources */,
 				BBC83E5D178B963D00E94DA1 /* ViewController_iPhone.xib in Resources */,
 				BB14FAAB178CF11B007E1648 /* CustomCellView.xib in Resources */,
+				BB096C22178E27EA00978387 /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +208,8 @@
 				BBC83E51178B963D00E94DA1 /* AppDelegate.m in Sources */,
 				BBC83E5A178B963D00E94DA1 /* ViewController.m in Sources */,
 				BB14FAA9178CF0E3007E1648 /* CustomCell.m in Sources */,
+				BB14FAAE178D1255007E1648 /* TweetDetail.m in Sources */,
+				BB096C21178E27EA00978387 /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

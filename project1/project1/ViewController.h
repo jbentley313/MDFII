@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+//block definition
+typedef void (^TwitHandler)(NSDictionary*);
 
 
 
@@ -16,5 +18,9 @@
     IBOutlet UITableView *twitterTableView;
     NSDateFormatter *formattedDate;
     NSArray *twitterFeed;
+    TwitHandler handler;
 }
+
+@property (nonatomic, strong) TwitHandler handler;
+
 @end

@@ -9,7 +9,7 @@
 #import "CustomCell.h"
 
 @implementation CustomCell
-@synthesize tweetLabel, dateLabel;
+@synthesize tweetLabel, dateLabel, icon;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

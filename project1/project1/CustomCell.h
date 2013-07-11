@@ -12,9 +12,11 @@
 {
     IBOutlet UILabel *tweetLabel;
     IBOutlet UILabel *dateLabel;
+    IBOutlet UIImageView *icon;
 }
 
 @property (nonatomic, strong)  UILabel *tweetLabel;
 @property (nonatomic, strong) UILabel *dateLabel;
+@property (nonatomic, strong) UIImageView *icon;
 
 @end
