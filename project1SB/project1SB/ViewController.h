@@ -19,6 +19,7 @@
     NSMutableArray *objects;
 }
 
+-(IBAction)onClick:(id)sender;
 
 @property NSMutableArray *objects;
 

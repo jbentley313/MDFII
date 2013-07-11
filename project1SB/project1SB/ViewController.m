@@ -167,6 +167,13 @@
         
     }
 }
+
+//click events
+-(IBAction)onClick:(id)sender;
+{
+    [twitterTableView reloadData];
+    
+}
 @end
 
 
