@@ -11,7 +11,7 @@
 #import <Social/Social.h>
 #import "CustomCell.h"
 #import "DetailsViewController.h"
-#import "TweetDetail.h"
+#import "Tweet.h"
 
 
 
@@ -21,7 +21,7 @@
 @end
 
 @implementation ViewController
-
+@synthesize objects, textToPass;
 
 - (void)viewDidLoad
 {
@@ -66,7 +66,7 @@
                                         
                                         //reload tableview
                                         [twitterTableView reloadData];
-//                                        NSLog(@"%@", [twitterFeed description]);
+                                        //                                        NSLog(@"%@", [twitterFeed description]);
                                         
                                         
                                         
@@ -108,13 +108,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomCellView" owner:self options:nil];
     
-    CustomCell *cell = (CustomCell *) [nib objectAtIndex:0];
+    
+    static NSString *CellIdentifier = @"cell";
+    
+    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     
     if (cell != nil) {
         NSDictionary *tweetDictionary = [twitterFeed objectAtIndex:indexPath.row];
         if (tweetDictionary != nil) {
+            
+            
+            
             
             cell.tweetLabel.text = (NSString *)[tweetDictionary objectForKey:@"text"];
             cell.dateLabel.text = (NSString *)[tweetDictionary objectForKey:@"created_at"];
@@ -144,25 +150,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-//selected row method
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath1
+//segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    //    
-    //
-        DetailsViewController *viewcontroller = [[DetailsViewController alloc] initWithNibName:@"DetailsViewController" bundle:nil];
-        
-    //
-    UITableViewCell *cell = (UITableViewCell *)indexPath1;
-    NSIndexPath *indexPath = [twitterTableView indexPathForCell:cell];
-    
-    TweetDetail *tweetDetail  = [objects objectAtIndex:indexPath.row];
-    
-    viewcontroller.tweetDetailObject = tweetDetail;
-    
-    
-[self presentViewController:viewcontroller animated:YES completion:nil];
-}
+    if ([segue.identifier isEqualToString:@"detailsSeg"]) {
 
+        NSInteger row = [twitterTableView.indexPathForSelectedRow row];
+        NSDictionary *tweetSelected = [twitterFeed objectAtIndex:row];
+        
+        DetailsViewController *tweetDetailV = (DetailsViewController *)segue.destinationViewController;
+        
+        tweetDetailV.tweetObject = tweetSelected;
+        
+        
+    }
+}
 @end
 
 

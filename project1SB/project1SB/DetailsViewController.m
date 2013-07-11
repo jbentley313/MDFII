@@ -1,40 +1,34 @@
 //
 //  DetailsViewController.m
-//  project1
+//  project1SB
 //
 //  Created by theOwner on 7/10/13.
 //  Copyright (c) 2013 Jason Bentley. All rights reserved.
 //
 
 #import "DetailsViewController.h"
-#import "ViewController.h"
 
 @interface DetailsViewController ()
 
 @end
 
 @implementation DetailsViewController
-@synthesize tweetDetailObject;
+@synthesize tweetObject, textLabel, passedText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-      
     }
     return self;
 }
 
--(IBAction)onClick:(id)sender;
-{
-    [self dismissViewControllerAnimated:true completion:nil];
-}
-
 - (void)viewDidLoad
 {
-        [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    NSLog(@"%@", tweetObject);
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,16 +7,16 @@
 //
 
 #import "ViewController.h"
-
+#import "TweetDetail.h"
 
 @interface DetailsViewController : ViewController
 {
-    NSDictionary *singleTweetDictionary;
+    NSObject *singleTweet;
     
 }
 -(IBAction)onClick:(id)sender;
 
-@property NSDictionary *singleTweetDictionary;
+@property (strong) TweetDetail *tweetDetailObject;
 
 
 @end

@@ -1,16 +1,15 @@
 //
-//  TweetDetail.m
-//  project1
+//  Tweet.m
+//  project1SB
 //
-//  Created by theOwner on 7/9/13.
+//  Created by theOwner on 7/10/13.
 //  Copyright (c) 2013 Jason Bentley. All rights reserved.
 //
 
-#import "TweetDetail.h"
+#import "Tweet.h"
 
-@implementation TweetDetail
+@implementation Tweet
 @synthesize name, timeP, thumbPicUrl;
-
 
 -(id)initWithText:(NSString*)text timePosted:(NSString*)timePosted userName:(NSString*)userName thumbPictureUrl:(NSString*)thumbPictureUrl
 {
@@ -22,5 +21,6 @@
     }
     return self;
 }
+
 
 @end

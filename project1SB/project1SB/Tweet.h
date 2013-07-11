@@ -1,18 +1,19 @@
 //
-//  TweetDetail.h
-//  project1
+//  Tweet.h
+//  project1SB
 //
-//  Created by theOwner on 7/9/13.
+//  Created by theOwner on 7/10/13.
 //  Copyright (c) 2013 Jason Bentley. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface TweetDetail : NSObject
+@interface Tweet : NSObject
 {
-    
+     NSString *name;
+     NSString *timeP;
+     NSString *thumbPicUrl;
 }
-
 -(id)initWithText:(NSString*)text timePosted:(NSString*)timePosted userName:(NSString*)userName thumbPictureUrl:(NSString*)thumbPictureUrl;
 
 @property NSString *name;

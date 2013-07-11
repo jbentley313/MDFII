@@ -1,17 +1,15 @@
 //
 //  ViewController.h
-//  project1
+//  project1SB
 //
-//  Created by theOwner on 7/8/13.
+//  Created by theOwner on 7/10/13.
 //  Copyright (c) 2013 Jason Bentley. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
-
-
-
-
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
+#import "Tweet.h"
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     IBOutlet UITableView *twitterTableView;
@@ -22,5 +20,8 @@
 }
 
 
+@property NSMutableArray *objects;
+
+@property NSString *textToPass;
 
 @end
