@@ -39,15 +39,23 @@
                                             <color key="textColor" red="0.05994313791116488" green="0.15719335864954762" blue="0.4129464285714286" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="play_48.png" translatesAutoresizingMaskIntoConstraints="NO" id="MDp-Yu-eeu">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="34" id="Wrs-D6-Bpt"/>
+                                                <constraint firstAttribute="height" constant="34" id="m96-kk-tKi"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="365-ch-caR" firstAttribute="top" secondItem="zgo-Wl-Evh" secondAttribute="top" constant="11" id="6D8-je-zrK"/>
+                                    <constraint firstItem="MDp-Yu-eeu" firstAttribute="leading" secondItem="zgo-Wl-Evh" secondAttribute="leading" constant="5" id="1cx-fF-mfB"/>
+                                    <constraint firstItem="365-ch-caR" firstAttribute="leading" secondItem="zgo-Wl-Evh" secondAttribute="leading" constant="42" id="ADC-j9-okg"/>
                                     <constraint firstAttribute="trailing" secondItem="y2S-Af-Sv9" secondAttribute="trailing" constant="20" type="default" id="HF3-o6-3gz"/>
-                                    <constraint firstItem="365-ch-caR" firstAttribute="leading" secondItem="zgo-Wl-Evh" secondAttribute="leading" constant="42" id="IxW-1I-Ssj"/>
-                                    <constraint firstItem="y2S-Af-Sv9" firstAttribute="top" secondItem="365-ch-caR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wjD-PA-Ire"/>
+                                    <constraint firstItem="MDp-Yu-eeu" firstAttribute="centerY" secondItem="zgo-Wl-Evh" secondAttribute="centerY" type="default" id="MgP-DB-cxM"/>
+                                    <constraint firstAttribute="bottom" secondItem="y2S-Af-Sv9" secondAttribute="bottom" constant="1" id="pUp-Hl-Mf3"/>
+                                    <constraint firstItem="365-ch-caR" firstAttribute="top" secondItem="zgo-Wl-Evh" secondAttribute="top" constant="20" type="default" id="pdn-V2-nYk"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dateLabel" destination="y2S-Af-Sv9" id="GuS-8I-zSx"/>
@@ -62,8 +70,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="iBU-Ew-YeE">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Latest Tweets" id="iBU-Ew-YeE">
                         <barButtonItem key="backBarButtonItem" title="back" id="jhK-6z-vxq"/>
                         <barButtonItem key="leftBarButtonItem" title="User Info" id="ij0-6A-TQO">
                             <connections>
@@ -279,6 +286,9 @@
             <point key="canvasLocation" x="-307" y="528"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play_48.png" width="48" height="48"/>
+    </resources>
     <classes>
         <class className="CustomCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomCell.h"/>
