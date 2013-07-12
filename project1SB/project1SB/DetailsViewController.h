@@ -13,7 +13,7 @@
     NSDictionary *tweetObject;
     IBOutlet UILabel *text;
     IBOutlet UILabel *datePosted;
-    
+    IBOutlet UILabel *userLabel;
 }
 @property(strong) IBOutlet UILabel *textLabel;
 

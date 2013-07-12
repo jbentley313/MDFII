@@ -13,9 +13,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="djg-V9-ngG">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="27"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="our-LZ-D4F">
+                                    <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="our-LZ-D4F" firstAttribute="centerX" secondItem="djg-V9-ngG" secondAttribute="centerX" type="default" id="H1i-t4-C0O"/>
+                                <constraint firstItem="our-LZ-D4F" firstAttribute="centerY" secondItem="djg-V9-ngG" secondAttribute="centerY" type="default" id="VNO-uf-7KP"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="cell" rowHeight="71" id="zgo-Wl-Evh" customClass="CustomCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="71"/>
+                                <rect key="frame" x="0.0" y="49" width="320" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="70"/>
@@ -61,14 +82,21 @@
                             <outlet property="delegate" destination="2" id="PHI-bd-E2R"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Latest Tweets" id="iBU-Ew-YeE">
                         <barButtonItem key="backBarButtonItem" title="back" id="jhK-6z-vxq"/>
-                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="tTp-sm-gh6">
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="tTp-sm-gh6">
                             <connections>
-                                <action selector="onClick:" destination="2" id="49D-ES-XBa"/>
+                                <action selector="refreshTweets:" destination="2" id="YJX-lZ-fPf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" tag="1" systemItem="add" id="gTR-iN-5rY">
+                            <connections>
+                                <action selector="composeTweet:" destination="2" id="UK0-hs-ydB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="twitterTableView" destination="yfn-WA-dVF" id="TKj-wI-39S"/>
                     </connections>
@@ -85,10 +113,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="TweetText" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="CCi-7o-3VA">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="TweetText" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="291" translatesAutoresizingMaskIntoConstraints="NO" id="CCi-7o-3VA">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="i3G-ee-I5G"/>
-                                    <constraint firstAttribute="height" constant="209" id="x5s-Uf-Bi5"/>
+                                    <constraint firstAttribute="height" constant="244" id="f4I-QB-FU9"/>
+                                    <constraint firstAttribute="width" constant="291" id="odZ-P8-F8B"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -97,30 +125,40 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SC-lY-k3K">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="184" id="2Rx-U4-eP0"/>
+                                    <constraint firstAttribute="height" constant="21" id="QrI-1T-n0b"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Posted on:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYU-AL-88z">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Posted by:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYU-AL-88z">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="1fF-lI-niV"/>
                                     <constraint firstAttribute="width" constant="82" id="Aiq-5H-qaF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="UserLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijZ-U0-W77">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="tPF-HA-lJC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mYU-AL-88z" firstAttribute="top" secondItem="1SC-lY-k3K" secondAttribute="top" type="default" id="USJ-fu-2A0"/>
-                            <constraint firstItem="CCi-7o-3VA" firstAttribute="leading" secondItem="kju-Yt-z1r" secondAttribute="leading" constant="49" id="X3H-Yo-Q9E"/>
-                            <constraint firstItem="CCi-7o-3VA" firstAttribute="top" secondItem="kju-Yt-z1r" secondAttribute="top" constant="45" id="XUP-J9-Cob"/>
-                            <constraint firstItem="1SC-lY-k3K" firstAttribute="leading" secondItem="mYU-AL-88z" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="k7P-Lu-qcl"/>
-                            <constraint firstItem="1SC-lY-k3K" firstAttribute="baseline" secondItem="mYU-AL-88z" secondAttribute="baseline" type="default" id="kB7-a9-QWk"/>
-                            <constraint firstAttribute="bottom" secondItem="mYU-AL-88z" secondAttribute="bottom" constant="177" id="mYQ-X1-leQ"/>
-                            <constraint firstAttribute="trailing" secondItem="1SC-lY-k3K" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xbX-ob-IiY"/>
+                            <constraint firstItem="ijZ-U0-W77" firstAttribute="baseline" secondItem="mYU-AL-88z" secondAttribute="baseline" type="default" id="2ez-zX-LZb"/>
+                            <constraint firstItem="mYU-AL-88z" firstAttribute="top" secondItem="CCi-7o-3VA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5y4-0Y-nQM"/>
+                            <constraint firstItem="ijZ-U0-W77" firstAttribute="leading" secondItem="kju-Yt-z1r" secondAttribute="leading" constant="96" id="O89-IN-aaW"/>
+                            <constraint firstItem="1SC-lY-k3K" firstAttribute="leading" secondItem="kju-Yt-z1r" secondAttribute="leading" constant="39" id="TJm-Ji-zjE"/>
+                            <constraint firstItem="CCi-7o-3VA" firstAttribute="centerX" secondItem="kju-Yt-z1r" secondAttribute="centerX" type="default" id="VHO-QB-5Dw"/>
+                            <constraint firstItem="mYU-AL-88z" firstAttribute="leading" secondItem="kju-Yt-z1r" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dKD-ph-XrY"/>
+                            <constraint firstItem="CCi-7o-3VA" firstAttribute="top" secondItem="kju-Yt-z1r" secondAttribute="top" constant="10" id="gP5-1c-rq9"/>
+                            <constraint firstItem="ijZ-U0-W77" firstAttribute="top" secondItem="CCi-7o-3VA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jXt-m6-rvb"/>
+                            <constraint firstItem="1SC-lY-k3K" firstAttribute="top" secondItem="mYU-AL-88z" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vYL-ut-frN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iuq-Gj-QQX"/>
@@ -128,6 +166,7 @@
                         <outlet property="datePosted" destination="1SC-lY-k3K" id="Fhm-Xn-wcb"/>
                         <outlet property="text" destination="CCi-7o-3VA" id="hOy-Tn-KO4"/>
                         <outlet property="textLabel" destination="CCi-7o-3VA" id="T7r-0c-yM8"/>
+                        <outlet property="userLabel" destination="ijZ-U0-W77" id="yCo-1h-2ss"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M78-vc-nGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -168,6 +207,7 @@
                 <relationship kind="outlet" name="datePosted" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="text" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="textLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="userLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -176,7 +216,8 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="onClick:"/>
+                <relationship kind="action" name="composeTweet:"/>
+                <relationship kind="action" name="refreshTweets:"/>
                 <relationship kind="outlet" name="twitterTableView" candidateClass="UITableView"/>
             </relationships>
         </class>

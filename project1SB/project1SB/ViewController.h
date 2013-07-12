@@ -9,17 +9,20 @@
 #import <UIKit/UIKit.h>
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
-#import "Tweet.h"
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate>
 {
     IBOutlet UITableView *twitterTableView;
     NSDateFormatter *formattedDate;
     NSArray *twitterFeed;
     NSArray *info;
     NSMutableArray *objects;
+    UIAlertView *alertViewMsg;
+    
 }
 
--(IBAction)onClick:(id)sender;
+
+-(void)getTimeLine;
 
 @property NSMutableArray *objects;
 

@@ -31,6 +31,9 @@
     textLabel.text = (NSString *)[tweetObject objectForKey:@"text"];
     datePosted.text = (NSString *)[tweetObject objectForKey:@"created_at"];
     
+
+    
+    userLabel.text = (NSString *)[[tweetObject objectForKey:@"user"] objectForKey:@"name"];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.

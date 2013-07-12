@@ -11,7 +11,7 @@
 #import <Social/Social.h>
 #import "CustomCell.h"
 #import "DetailsViewController.h"
-#import "Tweet.h"
+
 
 
 
@@ -25,6 +25,31 @@
 
 - (void)viewDidLoad
 {
+    [self getTimeLine];
+    
+        [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)getTimeLine;
+{
+//    alertViewMsg = [[UIAlertView alloc] initWithTitle:@"Loading" message:@"Please wait..." delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+//    if (alertViewMsg != nil) {
+//        
+//        [alertViewMsg show];
+//        
+//        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+//        
+//        if (indicator  != nil) {
+//            
+//            indicator.center = CGPointMake((alertViewMsg.bounds.size.width/2.0f), (alertViewMsg.bounds.size.height/2.0f) + 25.0f);
+//            
+//            [indicator startAnimating];
+//            [alertViewMsg addSubview:indicator];
+//        }
+//    }
+
+    
     //accountStore
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     if (accountStore != nil) {
@@ -66,14 +91,11 @@
                                         
                                         //reload tableview
                                         [twitterTableView reloadData];
-                                        //                                        NSLog(@"%@", [twitterFeed description]);
                                         
-                                        
-                                        
-                                        
-                                    }
+                                                                            }
                                     
                                 }];
+//                                [alertViewMsg dismissWithClickedButtonIndex:0 animated:YES];
                             }
                             
                         }
@@ -86,16 +108,17 @@
                 {
                     
                 }
+             
             }];
             
         }
+        
     }
     
     
     
     
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
@@ -132,10 +155,22 @@
             cell.icon.image = (UIImage *) [tweetDictionary objectForKey:@"default_profile_image"];
         }
         return cell;
+        
     }
     
     return nil;
 }
+
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//    [alertViewMsg dismissWithClickedButtonIndex:0 animated:YES];
+//}
+
+
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
+//{
+//    
+//}
 
 
 //custom cell height
@@ -168,12 +203,45 @@
     }
 }
 
-//click events
--(IBAction)onClick:(id)sender;
-{
-    [twitterTableView reloadData];
-    
+
+- (IBAction)refreshTweets:(id)sender {
+    [self getTimeLine];
 }
+
+
+- (IBAction)composeTweet:(id)sender {
+    SLComposeViewController *slComposeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    
+    if (slComposeViewController != nil) {
+        NSLog(@"sl");
+        
+        [slComposeViewController setInitialText:@"Posted from"];
+        
+        [self presentViewController:slComposeViewController animated:YES completion:nil];
+    }
+
+}
+
+//alert
+//-(void)DisplayAlertWithString:(NSString*)alert
+//{
+//    UIAlertView *alertViewMsg = [[UIAlertView alloc] initWithTitle:@"Please Wait..." message:@"Loading" delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+//    if (alertViewMsg != nil) {
+//        
+//        [alertViewMsg show];
+//        
+//        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+//        
+//        if (indicator  != nil) {
+//            
+//            [indicator startAnimating];
+//            [alertViewMsg addSubview:indicator];
+//        }
+//    }
+//}
+
+
+
 @end
 
 
