@@ -23,6 +23,7 @@
 		BB096C5B178E4FB500978387 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB096C5A178E4FB500978387 /* Social.framework */; };
 		BB096C5D178E4FC500978387 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB096C5C178E4FC400978387 /* Accounts.framework */; };
 		BB1C7E97178FCE53005D132A /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1C7E96178FCE53005D132A /* UserViewController.m */; };
+		BB6A91291790C71600FB7533 /* play_48.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6A91281790C71600FB7533 /* play_48.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		BB096C5C178E4FC400978387 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		BB1C7E95178FCE53005D132A /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		BB1C7E96178FCE53005D132A /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		BB6A91281790C71600FB7533 /* play_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_48.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				BB096C3E178E489400978387 /* AppDelegate.h */,
 				BB096C3F178E489400978387 /* AppDelegate.m */,
+				BB6A91281790C71600FB7533 /* play_48.png */,
 				BB096C47178E489400978387 /* MainStoryboard.storyboard */,
 				BB096C52178E4A4500978387 /* DetailsViewController.h */,
 				BB096C53178E4A4500978387 /* DetailsViewController.m */,
@@ -186,6 +189,7 @@
 				BB096C44178E489400978387 /* Default@2x.png in Resources */,
 				BB096C46178E489400978387 /* Default-568h@2x.png in Resources */,
 				BB096C49178E489400978387 /* MainStoryboard.storyboard in Resources */,
+				BB6A91291790C71600FB7533 /* play_48.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
