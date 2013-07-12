@@ -11,7 +11,7 @@
 #import <Social/Social.h>
 #import "CustomCell.h"
 #import "DetailsViewController.h"
-
+#import "UserViewController.h"
 
 
 
@@ -25,7 +25,20 @@
 
 - (void)viewDidLoad
 {
+    
+    //call getTimeLine for Twitter feed
     [self getTimeLine];
+    
+    //create two navbar buttons for right side of navbar
+    UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshTweets:)];
+    
+    UIBarButtonItem *composeTweets = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(composeTweet:)];
+    
+    //array of buttons
+    NSArray *rightsideNavBarButtons = [[NSArray alloc] initWithObjects:composeTweets, refresh, nil];
+    
+    //add rightside buttons
+    self.navigationItem.rightBarButtonItems = rightsideNavBarButtons;
     
         [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -191,7 +204,7 @@
     if ([segue.identifier isEqualToString:@"detailsSeg"]) {
 
         NSInteger row = [twitterTableView.indexPathForSelectedRow row];
-        NSDictionary *tweetSelected = [twitterFeed objectAtIndex:row];
+         NSDictionary *tweetSelected = [twitterFeed objectAtIndex:row];
         
         DetailsViewController *tweetDetailViewController = (DetailsViewController *)segue.destinationViewController;
         
@@ -200,16 +213,25 @@
         tweetDetailViewController.tweetObject = tweetSelected;
         
         
+    } else if ([segue.identifier isEqualToString:@"userInfoSeg"]) {
+        
+        UserViewController *userView = (UserViewController *)segue.destinationViewController;
+        
+        //set the userObject Dictionary to first index to get all info 
+        userView.userObject = [twitterFeed objectAtIndex:0];
+        NSLog(@"%@", userView.userObject);
     }
+    
+    
 }
 
 
-- (IBAction)refreshTweets:(id)sender {
+- (void)refreshTweets:(id)sender {
     [self getTimeLine];
 }
 
 
-- (IBAction)composeTweet:(id)sender {
+- (void)composeTweet:(id)sender {
     SLComposeViewController *slComposeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     
     if (slComposeViewController != nil) {
@@ -239,6 +261,9 @@
 //        }
 //    }
 //}
+
+
+
 
 
 

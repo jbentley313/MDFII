@@ -22,6 +22,7 @@
 		BB096C57178E4B0E00978387 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB096C56178E4B0E00978387 /* CustomCell.m */; };
 		BB096C5B178E4FB500978387 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB096C5A178E4FB500978387 /* Social.framework */; };
 		BB096C5D178E4FC500978387 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB096C5C178E4FC400978387 /* Accounts.framework */; };
+		BB1C7E97178FCE53005D132A /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1C7E96178FCE53005D132A /* UserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		BB096C56178E4B0E00978387 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		BB096C5A178E4FB500978387 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		BB096C5C178E4FC400978387 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		BB1C7E95178FCE53005D132A /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		BB1C7E96178FCE53005D132A /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 				BB096C36178E489400978387 /* Supporting Files */,
 				BB096C55178E4B0E00978387 /* CustomCell.h */,
 				BB096C56178E4B0E00978387 /* CustomCell.m */,
+				BB1C7E95178FCE53005D132A /* UserViewController.h */,
+				BB1C7E96178FCE53005D132A /* UserViewController.m */,
 			);
 			path = project1SB;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				BB096C4C178E489400978387 /* ViewController.m in Sources */,
 				BB096C54178E4A4500978387 /* DetailsViewController.m in Sources */,
 				BB096C57178E4B0E00978387 /* CustomCell.m in Sources */,
+				BB1C7E97178FCE53005D132A /* UserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

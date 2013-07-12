@@ -21,8 +21,9 @@
     
 }
 
-
+-(void)refreshTweets:(id)sender;
 -(void)getTimeLine;
+- (void)composeTweet:(id)sender;
 
 @property NSMutableArray *objects;
 
