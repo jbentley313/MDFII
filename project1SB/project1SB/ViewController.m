@@ -40,28 +40,13 @@
     //add rightside buttons
     self.navigationItem.rightBarButtonItems = rightsideNavBarButtons;
     
-        [super viewDidLoad];
+    [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 -(void)getTimeLine;
 {
-//    alertViewMsg = [[UIAlertView alloc] initWithTitle:@"Loading" message:@"Please wait..." delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
-//    if (alertViewMsg != nil) {
-//        
-//        [alertViewMsg show];
-//        
-//        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-//        
-//        if (indicator  != nil) {
-//            
-//            indicator.center = CGPointMake((alertViewMsg.bounds.size.width/2.0f), (alertViewMsg.bounds.size.height/2.0f) + 25.0f);
-//            
-//            [indicator startAnimating];
-//            [alertViewMsg addSubview:indicator];
-//        }
-//    }
-
+    [self DisplayAlertWithString:@"test"];
     
     //accountStore
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
@@ -105,10 +90,10 @@
                                         //reload tableview
                                         [twitterTableView reloadData];
                                         
-                                                                            }
+                                    }
                                     
                                 }];
-//                                [alertViewMsg dismissWithClickedButtonIndex:0 animated:YES];
+                                
                             }
                             
                         }
@@ -121,16 +106,15 @@
                 {
                     
                 }
-             
+                
             }];
             
         }
         
     }
-    
-    
-    
-    
+
+
+[alertViewMsg dismissWithClickedButtonIndex:0 animated:YES];
 
 }
 
@@ -174,16 +158,7 @@
     return nil;
 }
 
-//-(void)viewDidAppear:(BOOL)animated
-//{
-//    [alertViewMsg dismissWithClickedButtonIndex:0 animated:YES];
-//}
 
-
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
-//{
-//    
-//}
 
 
 //custom cell height
@@ -202,9 +177,11 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"detailsSeg"]) {
-
+        
+        alertViewMsg = nil;
+        
         NSInteger row = [twitterTableView.indexPathForSelectedRow row];
-         NSDictionary *tweetSelected = [twitterFeed objectAtIndex:row];
+        NSDictionary *tweetSelected = [twitterFeed objectAtIndex:row];
         
         DetailsViewController *tweetDetailViewController = (DetailsViewController *)segue.destinationViewController;
         
@@ -217,15 +194,15 @@
         
         UserViewController *userView = (UserViewController *)segue.destinationViewController;
         
-        //set the userObject Dictionary to first index to get all info 
+        //set the userObject Dictionary to first index to get all info
         userView.userObject = [twitterFeed objectAtIndex:0];
-        NSLog(@"%@", userView.userObject);
+
     }
     
     
 }
 
-
+//refresh
 - (void)refreshTweets:(id)sender {
     [self getTimeLine];
 }
@@ -241,29 +218,29 @@
         
         [self presentViewController:slComposeViewController animated:YES completion:nil];
     }
-
+    
 }
 
+
 //alert
-//-(void)DisplayAlertWithString:(NSString*)alert
-//{
-//    UIAlertView *alertViewMsg = [[UIAlertView alloc] initWithTitle:@"Please Wait..." message:@"Loading" delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
-//    if (alertViewMsg != nil) {
-//        
-//        [alertViewMsg show];
-//        
-//        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-//        
-//        if (indicator  != nil) {
-//            
-//            [indicator startAnimating];
-//            [alertViewMsg addSubview:indicator];
-//        }
-//    }
-//}
-
-
-
+-(void)DisplayAlertWithString:(NSString*)alert
+{
+    alertViewMsg = [[UIAlertView alloc] initWithTitle:@"Loading" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles: nil];
+    if (alertViewMsg != nil) {
+        
+        [alertViewMsg show];
+        
+        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        
+        if (indicator  != nil) {
+            
+            indicator.center = CGPointMake((alertViewMsg.bounds.size.width/2.0f), (alertViewMsg.bounds.size.height/2.0f) + 25.0f);
+            
+            [indicator startAnimating];
+            [alertViewMsg addSubview:indicator];
+        }
+    }
+}
 
 
 
