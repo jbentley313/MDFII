@@ -20,13 +20,13 @@
     
 }
 
--(void)refreshTweets:(id)sender;
--(void)getTimeLine;
+//-(void)refreshTweets:(id)sender;
+
 - (void)composeTweet:(id)sender;
 
 
 @property NSMutableArray *objects;
 
-@property NSString *textToPass;
+
 
 @end

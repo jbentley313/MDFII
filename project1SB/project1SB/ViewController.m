@@ -21,7 +21,7 @@
 @end
 
 @implementation ViewController
-@synthesize objects, textToPass;
+@synthesize objects;
 
 - (void)viewDidLoad
 {
@@ -116,9 +116,6 @@
         }
         
     }
-    
-    //here
-    
     
 }
 
