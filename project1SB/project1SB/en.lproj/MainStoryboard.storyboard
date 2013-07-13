@@ -33,7 +33,7 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2S-Af-Sv9">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="8fW-a3-jX9"/>
-                                                <constraint firstAttribute="width" constant="143" id="b6q-cI-rV5"/>
+                                                <constraint firstAttribute="width" constant="215" id="Zqj-hc-R5z"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.05994313791116488" green="0.15719335864954762" blue="0.4129464285714286" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,6 +67,7 @@
                         <connections>
                             <outlet property="dataSource" destination="2" id="bvU-Mk-vUS"/>
                             <outlet property="delegate" destination="2" id="PHI-bd-E2R"/>
+                            <outletCollection property="gestureRecognizers" destination="sXQ-Hm-0ga" appends="YES" id="sKG-JV-QSA"/>
                         </connections>
                     </tableView>
                     <toolbarItems/>
@@ -84,6 +85,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="sXQ-Hm-0ga">
+                    <connections>
+                        <action selector="pullDown:" destination="2" id="ZNC-1n-ra5"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137" y="528"/>
         </scene>
@@ -215,10 +221,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SC-lY-k3K">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SC-lY-k3K">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="184" id="2Rx-U4-eP0"/>
-                                    <constraint firstAttribute="height" constant="21" id="QrI-1T-n0b"/>
+                                    <constraint firstAttribute="height" constant="66" id="iLQ-aN-L1p"/>
+                                    <constraint firstAttribute="width" constant="233" id="q2V-p0-XtN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -245,8 +251,8 @@
                         <constraints>
                             <constraint firstItem="ijZ-U0-W77" firstAttribute="baseline" secondItem="mYU-AL-88z" secondAttribute="baseline" type="default" id="2ez-zX-LZb"/>
                             <constraint firstItem="mYU-AL-88z" firstAttribute="top" secondItem="CCi-7o-3VA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5y4-0Y-nQM"/>
+                            <constraint firstItem="1SC-lY-k3K" firstAttribute="leading" secondItem="kju-Yt-z1r" secondAttribute="leading" constant="10" id="Hrh-zm-QlZ"/>
                             <constraint firstItem="ijZ-U0-W77" firstAttribute="leading" secondItem="kju-Yt-z1r" secondAttribute="leading" constant="96" id="O89-IN-aaW"/>
-                            <constraint firstItem="1SC-lY-k3K" firstAttribute="leading" secondItem="kju-Yt-z1r" secondAttribute="leading" constant="39" id="TJm-Ji-zjE"/>
                             <constraint firstItem="CCi-7o-3VA" firstAttribute="centerX" secondItem="kju-Yt-z1r" secondAttribute="centerX" type="default" id="VHO-QB-5Dw"/>
                             <constraint firstItem="mYU-AL-88z" firstAttribute="leading" secondItem="kju-Yt-z1r" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dKD-ph-XrY"/>
                             <constraint firstItem="CCi-7o-3VA" firstAttribute="top" secondItem="kju-Yt-z1r" secondAttribute="top" constant="10" id="gP5-1c-rq9"/>
@@ -321,6 +327,7 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="pullDown:"/>
                 <relationship kind="outlet" name="twitterTableView" candidateClass="UITableView"/>
             </relationships>
         </class>

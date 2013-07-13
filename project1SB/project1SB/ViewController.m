@@ -140,10 +140,14 @@
         if (tweetDictionary != nil) {
             
             
-            
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
+            NSDate *date = [dateFormatter dateFromString:[tweetDictionary objectForKey:@"created_at"]];
+            [dateFormatter setDateFormat:@"eeee, MMMM d, yyyy 'at' hh:mm a"];
+            NSString *formattedDate = [dateFormatter stringFromDate:date];
             
             cell.tweetLabel.text = (NSString *)[tweetDictionary objectForKey:@"text"];
-            cell.dateLabel.text = (NSString *)[tweetDictionary objectForKey:@"created_at"];
+            cell.dateLabel.text = (NSString *) formattedDate;
             
             
             
@@ -205,6 +209,12 @@
 //refresh
 - (void)refreshTweets:(id)sender {
     [self getTimeLine];
+}
+
+
+- (IBAction)pullDown:(id)sender {
+    [self getTimeLine];
+    
 }
 
 
