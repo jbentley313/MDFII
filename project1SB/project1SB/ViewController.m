@@ -46,11 +46,14 @@
 
 -(void)getTimeLine;
 {
-    [self DisplayAlertWithString:@"test"];
+    
     
     //accountStore
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     if (accountStore != nil) {
+        
+        //display loading alert
+        [self DisplayAlertWithString];
         
         //account type
         ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
@@ -58,6 +61,7 @@
             [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
                 if (granted)
                 {
+                    
                     //array of accounts
                     NSArray *twitterAccounts = [accountStore accountsWithAccountType:accountType];
                     if (twitterAccounts != nil) {
@@ -104,7 +108,7 @@
                 }
                 else
                 {
-                    
+                    NSLog(@"no twitter account available");
                 }
                 
             }];
@@ -112,10 +116,10 @@
         }
         
     }
-
-
-[alertViewMsg dismissWithClickedButtonIndex:0 animated:YES];
-
+    
+    //here
+    
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
@@ -139,22 +143,24 @@
         NSDictionary *tweetDictionary = [twitterFeed objectAtIndex:indexPath.row];
         if (tweetDictionary != nil) {
             
-            
+            //format the date from twitter
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
             NSDate *date = [dateFormatter dateFromString:[tweetDictionary objectForKey:@"created_at"]];
             [dateFormatter setDateFormat:@"eeee, MMMM d, yyyy 'at' hh:mm a"];
             NSString *formattedDate = [dateFormatter stringFromDate:date];
             
+            //set tweetlabel to show the tweet
             cell.tweetLabel.text = (NSString *)[tweetDictionary objectForKey:@"text"];
+            
+            //set datelabel to show date
             cell.dateLabel.text = (NSString *) formattedDate;
             
             
-            
-            
-            
-            cell.icon.image = (UIImage *) [tweetDictionary objectForKey:@"default_profile_image"];
+            //dismiss here?
+            [alertViewMsg dismissWithClickedButtonIndex:0 animated:YES];
         }
+        
         return cell;
         
     }
@@ -180,6 +186,7 @@
 //segue to pass info and display details
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    //tweet details segue
     if ([segue.identifier isEqualToString:@"detailsSeg"]) {
         
         alertViewMsg = nil;
@@ -194,13 +201,14 @@
         tweetDetailViewController.tweetObject = tweetSelected;
         
         
+        //user info segue
     } else if ([segue.identifier isEqualToString:@"userInfoSeg"]) {
         
         UserViewController *userView = (UserViewController *)segue.destinationViewController;
         
         //set the userObject Dictionary to first index to get all info
         userView.userObject = [twitterFeed objectAtIndex:0];
-
+        
     }
     
     
@@ -211,13 +219,14 @@
     [self getTimeLine];
 }
 
-
+//swipe down refresh
 - (IBAction)pullDown:(id)sender {
     [self getTimeLine];
+    NSLog(@"yes");
     
 }
 
-
+//compose tweet
 - (void)composeTweet:(id)sender {
     SLComposeViewController *slComposeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     
@@ -233,9 +242,9 @@
 
 
 //alert
--(void)DisplayAlertWithString:(NSString*)alert
+-(void)DisplayAlertWithString
 {
-    alertViewMsg = [[UIAlertView alloc] initWithTitle:@"Loading" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles: nil];
+    alertViewMsg = [[UIAlertView alloc] initWithTitle:@"Loading" message:@"Please wait..." delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
     if (alertViewMsg != nil) {
         
         [alertViewMsg show];
@@ -248,6 +257,7 @@
             
             [indicator startAnimating];
             [alertViewMsg addSubview:indicator];
+            
         }
     }
 }
