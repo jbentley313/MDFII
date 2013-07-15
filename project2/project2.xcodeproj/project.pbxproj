@@ -18,6 +18,7 @@
 		BBFA650F1794B8C30029493F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBFA650E1794B8C30029493F /* Default-568h@2x.png */; };
 		BBFA65121794B8C30029493F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBFA65101794B8C30029493F /* MainStoryboard.storyboard */; };
 		BBFA65151794B8C30029493F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFA65141794B8C30029493F /* ViewController.m */; };
+		BBFA651D1794BDB30029493F /* CustomCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFA651C1794BDB30029493F /* CustomCollectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		BBFA65111794B8C30029493F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BBFA65131794B8C30029493F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BBFA65141794B8C30029493F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BBFA651B1794BDB30029493F /* CustomCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionView.h; sourceTree = "<group>"; };
+		BBFA651C1794BDB30029493F /* CustomCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				BBFA65071794B8C30029493F /* AppDelegate.h */,
 				BBFA65081794B8C30029493F /* AppDelegate.m */,
 				BBFA65101794B8C30029493F /* MainStoryboard.storyboard */,
+				BBFA651B1794BDB30029493F /* CustomCollectionView.h */,
+				BBFA651C1794BDB30029493F /* CustomCollectionView.m */,
 				BBFA65131794B8C30029493F /* ViewController.h */,
 				BBFA65141794B8C30029493F /* ViewController.m */,
 				BBFA64FF1794B8C30029493F /* Supporting Files */,
@@ -176,6 +181,7 @@
 				BBFA65051794B8C30029493F /* main.m in Sources */,
 				BBFA65091794B8C30029493F /* AppDelegate.m in Sources */,
 				BBFA65151794B8C30029493F /* ViewController.m in Sources */,
+				BBFA651D1794BDB30029493F /* CustomCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
