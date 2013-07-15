@@ -31,6 +31,7 @@
     
     //create two navbar buttons for right side of navbar
     UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshTweets:)];
+    NSLog(@"view");
     
     UIBarButtonItem *composeTweets = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(composeTweet:)];
     
@@ -44,10 +45,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+
+
 -(void)getTimeLine;
 {
-    
-    
     //accountStore
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     if (accountStore != nil) {

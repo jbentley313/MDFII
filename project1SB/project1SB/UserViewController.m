@@ -25,6 +25,11 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [alertViewMsg dismissWithClickedButtonIndex:0 animated:YES];
+}
+
 - (void)viewDidLoad
 {
     //set userName label
