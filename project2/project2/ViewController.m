@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "CustomCollectionView.h"
 @interface ViewController ()
 
 @end
@@ -28,7 +28,12 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
+    CustomCollectionView *cell = [theCollectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCelli" forIndexPath:indexPath];
     
+    if (cell != nil) {
+        
+    }
+    return cell;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView;
