@@ -19,12 +19,12 @@
 @end
 
 @implementation ViewController
-@synthesize Friendobj;
+@synthesize FriendObj;
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [self getTimeLine];
-//    [super viewDidLoad];
+    //    [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -37,7 +37,7 @@
     if (accountStore != nil) {
         
         //display loading alert
-//        [self DisplayAlertWithString];
+        //        [self DisplayAlertWithString];
         
         //account type
         ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
@@ -56,8 +56,8 @@
                             
                             //Rest call for user friends list
                             NSString *friendListString =  @"https://api.twitter.com/1.1/friends/list.json?cursor=-1&skip_status=true&include_user_entities=false";
-
-
+                            
+                            
                             
                             //SLRequest
                             SLRequest *slRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:friendListString] parameters:nil];
@@ -79,23 +79,26 @@
                                         
                                         
                                         //get a dictionary within a twitter dictionary!
-                                        NSArray *tweetArrayy = (NSArray *)[twitterFeed objectForKey:@"users"];
-//                                        NSLog(@"%@", tweetArrayy);
-                                  
+                                        tweetArrayy = (NSArray *)[twitterFeed objectForKey:@"users"];
+                                        //                                        NSLog(@"%@", tweetArrayy);
+                                        
                                         
                                         for (int i = 0; i < tweetArrayy.count; i++) {
                                             
-                                             myFollower = [tweetArrayy objectAtIndex:i];
+                                            myFollower = [tweetArrayy objectAtIndex:i];
                                             NSLog(@"%@", myFollower);
                                             
-//                                            Friendobj = [[Friend alloc] init];
-//                                            
-                                          NSString *Friendobjnamer = [myFollower objectForKey:@"name"];
-                                            NSLog(@"%@", Friendobjnamer);
+                                            FriendObj = [[Friend alloc] init];
+                                            //
+                                            NSString *friendName = [myFollower objectForKey:@"name"];
+                                            NSLog(@"%@", friendName);
                                             
-//                                            Friendobj.name = (NSString *) [twitterFeed objectForKey:@"name"];
-//                                            Friendobj.pictureUrl = (NSString *) [twitterFeed objectForKey:@"profile_background_image_url"];
-//                                            
+                                            NSString *friendPic = [myFollower objectForKey:@"profile_background_image_url"];
+                                            
+                                            FriendObj.namer = friendName;
+                                            FriendObj.pictureUrl = friendPic;
+                                            NSLog(@"%@", FriendObj.pictureUrl);
+                                            //
                                         }
                                         
                                         
@@ -150,7 +153,7 @@
 //cell sections
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView;
 {
-   
+    
     return 1;
     
 }
@@ -159,9 +162,9 @@
 //number of collectionview cells
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 {
-    if (twitterFeed != nil) {
+    if (tweetArrayy != nil) {
         
-        return twitterFeed.count;
+        return tweetArrayy.count;
         
     }
     

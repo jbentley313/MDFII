@@ -17,8 +17,9 @@
     
     NSDictionary *myFollower;
     NSMutableArray *objectsWithFriends;
+    NSArray *tweetArrayy;
 }
 
-@property(strong) Friend *Friendobj;
+@property(strong) Friend *FriendObj;
 
 @end
