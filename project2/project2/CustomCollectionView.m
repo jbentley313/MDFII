@@ -9,6 +9,8 @@
 #import "CustomCollectionView.h"
 
 @implementation CustomCollectionView
+@synthesize collectionCellName;
+
 
 - (id)initWithFrame:(CGRect)frame
 {

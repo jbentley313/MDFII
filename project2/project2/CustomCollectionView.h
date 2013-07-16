@@ -13,4 +13,6 @@
     IBOutlet UIImageView *collectionCellImage;
     IBOutlet UILabel *collectionCellName;
 }
+
+@property UILabel *collectionCellName;
 @end

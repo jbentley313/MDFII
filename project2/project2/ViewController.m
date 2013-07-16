@@ -11,7 +11,7 @@
 #import "DetailsViewController.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
-#import "Friend.h"
+//#import "Friend.h"
 
 
 @interface ViewController ()
@@ -19,12 +19,12 @@
 @end
 
 @implementation ViewController
-@synthesize FriendObj;
+@synthesize FriendObj, objectsWithFriends, friendName, friendPic;
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidLoad
 {
     [self getTimeLine];
-    //    [super viewDidLoad];
+    [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -82,23 +82,32 @@
                                         tweetArrayy = (NSArray *)[twitterFeed objectForKey:@"users"];
                                         //                                        NSLog(@"%@", tweetArrayy);
                                         
+                                        self.objectsWithFriends = [[NSMutableArray alloc] init];
                                         
                                         for (int i = 0; i < tweetArrayy.count; i++) {
+                                            
                                             
                                             myFollower = [tweetArrayy objectAtIndex:i];
                                             NSLog(@"%@", myFollower);
                                             
-                                            FriendObj = [[Friend alloc] init];
-                                            //
-                                            NSString *friendName = [myFollower objectForKey:@"name"];
-                                            NSLog(@"%@", friendName);
                                             
-                                            NSString *friendPic = [myFollower objectForKey:@"profile_background_image_url"];
+                                            self.FriendObj = [[Friend alloc] init];
+                                            friendName = [myFollower objectForKey:@"name"];
+                                            //                                            NSLog(@"%@", friendName);
                                             
-                                            FriendObj.namer = friendName;
-                                            FriendObj.pictureUrl = friendPic;
+                                            friendPic = [myFollower objectForKey:@"profile_background_image_url"];
+                                            
+                                            FriendObj.namer = self.friendName;
+                                            
+                                            FriendObj.pictureUrl = self.friendPic;
+                                            NSLog(@"%@", FriendObj.namer);
                                             NSLog(@"%@", FriendObj.pictureUrl);
-                                            //
+                                            
+                                            [self.objectsWithFriends addObject:FriendObj];
+                                            
+                                            NSLog(@"%@", FriendObj);
+                                            
+                                            
                                         }
                                         
                                         
@@ -144,6 +153,10 @@
     CustomCollectionView *cell = [theCollectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCelli" forIndexPath:indexPath];
     
     if (cell != nil) {
+        Friend *passedFriend = [objectsWithFriends objectAtIndex:indexPath.row];
+        
+        cell.collectionCellName.text = passedFriend.namer;
+        
         
     }
     return cell;

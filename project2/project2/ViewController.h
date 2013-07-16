@@ -21,5 +21,8 @@
 }
 
 @property(strong) Friend *FriendObj;
+@property NSMutableArray *objectsWithFriends;
+@property NSString *friendName;
+@property NSString *friendPic;
 
 @end

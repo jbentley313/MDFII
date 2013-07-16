@@ -15,12 +15,12 @@
 
 -(id)initWithName:(NSString*)friendName  picUrl:(NSString*)picUrl;
 {
-
-if ((self = [super init]))
-{
-    friendName = namer;
-    picUrl = pictureUrl;
-}
+    
+    if ((self = [super init]))
+    {
+        namer = friendName;
+        pictureUrl = picUrl;
+    }
     return self;
 }
 @end
