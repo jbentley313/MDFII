@@ -9,7 +9,7 @@
 #import "Friend.h"
 
 @implementation Friend
-@synthesize pictureUrl, name;
+@synthesize pictureUrl, namer;
 
 
 
@@ -18,7 +18,7 @@
 
 if ((self = [super init]))
 {
-    friendName = name;
+    friendName = namer;
     picUrl = pictureUrl;
 }
     return self;

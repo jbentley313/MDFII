@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Friend.h"
 
 @interface ViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 {
     IBOutlet UICollectionView *theCollectionView;
     NSDictionary *twitterJSON;
     NSDictionary *twitterFeed;
+    
+    NSArray *myFollowers;
 }
 
-
+@property(strong) Friend *Friendobj;
 
 @end

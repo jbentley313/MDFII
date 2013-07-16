@@ -11,7 +11,7 @@
 #import "DetailsViewController.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
-
+#import "Friend.h"
 
 
 @interface ViewController ()
@@ -19,6 +19,7 @@
 @end
 
 @implementation ViewController
+@synthesize Friendobj;
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -74,12 +75,27 @@
                                     if (responseCode == 200) {
                                         
                                         //json object response data
+                                        twitterFeed = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
                                         
                                         
-                                        twitterJSON = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
-                                        NSLog(@"%@", twitterJSON);
+                                        //get a dictionary within a twitter dictionary!
+                                        NSDictionary *tweetDictionary = (NSDictionary *)[twitterFeed objectForKey:@"users"];
+//                                        NSLog(@"%@", tweetDictionary);
+                                  
                                         
-                                        twitterFeed = (NSDictionary *) [twitterJSON objectForKey:@"users"];
+                                        for (int i = 0; i < tweetDictionary.count; i++) {
+                                            Friendobj = [[Friend alloc] init];
+                                            
+                                           Friendobj.namer = [tweetDictionary objectForKey:@"name"];
+                                            NSLog(@"%@", Friendobj.namer);
+                                            
+//                                            Friendobj.name = (NSString *) [twitterFeed objectForKey:@"name"];
+//                                            Friendobj.pictureUrl = (NSString *) [twitterFeed objectForKey:@"profile_background_image_url"];
+//                                            
+                                        }
+                                        
+                                        
+                                        
                                         
                                         //reload tableview
                                         [theCollectionView reloadData];

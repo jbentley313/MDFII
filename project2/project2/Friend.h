@@ -10,11 +10,11 @@
 
 @interface Friend : NSObject
 {
-    NSString *name;
+    NSString *namer;
     NSString *pictureUrl;
 }
 
-@property NSString *name;
+@property NSString *namer;
 @property NSString *pictureUrl;
 
 -(id)initWithName:(NSString*)friendName  picUrl:(NSString*)picUrl;
