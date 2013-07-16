@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CustomCollectionView.h"
+#import "DetailsViewController.h"
 @interface ViewController ()
 
 @end

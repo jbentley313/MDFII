@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BBA376FC1794C39300CD8EC2 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA376FB1794C39300CD8EC2 /* DetailsViewController.m */; };
 		BBFA64F91794B8C30029493F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFA64F81794B8C30029493F /* UIKit.framework */; };
 		BBFA64FB1794B8C30029493F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFA64FA1794B8C30029493F /* Foundation.framework */; };
 		BBFA64FD1794B8C30029493F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFA64FC1794B8C30029493F /* CoreGraphics.framework */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BBA376FA1794C39300CD8EC2 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		BBA376FB1794C39300CD8EC2 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		BBFA64F51794B8C30029493F /* project2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFA64F81794B8C30029493F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BBFA64FA1794B8C30029493F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -90,6 +93,8 @@
 				BBFA65081794B8C30029493F /* AppDelegate.m */,
 				BBFA65101794B8C30029493F /* MainStoryboard.storyboard */,
 				BBFA651B1794BDB30029493F /* CustomCollectionView.h */,
+				BBA376FA1794C39300CD8EC2 /* DetailsViewController.h */,
+				BBA376FB1794C39300CD8EC2 /* DetailsViewController.m */,
 				BBFA651C1794BDB30029493F /* CustomCollectionView.m */,
 				BBFA65131794B8C30029493F /* ViewController.h */,
 				BBFA65141794B8C30029493F /* ViewController.m */,
@@ -182,6 +187,7 @@
 				BBFA65091794B8C30029493F /* AppDelegate.m in Sources */,
 				BBFA65151794B8C30029493F /* ViewController.m in Sources */,
 				BBFA651D1794BDB30029493F /* CustomCollectionView.m in Sources */,
+				BBA376FC1794C39300CD8EC2 /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +310,7 @@
 				BBFA651A1794B8C30029493F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
