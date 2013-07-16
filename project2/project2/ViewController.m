@@ -95,7 +95,7 @@
                                             friendName = [myFollower objectForKey:@"name"];
                                             //                                            NSLog(@"%@", friendName);
                                             
-                                            friendPic = [myFollower objectForKey:@"profile_background_image_url"];
+                                            friendPic = [myFollower objectForKey:@"profile_image_url_https"];
                                             
                                             FriendObj.namer = self.friendName;
                                             
@@ -157,6 +157,13 @@
         
         cell.collectionCellName.text = passedFriend.namer;
         
+        //set cell thumb pics
+        NSURL * imageURL = [NSURL URLWithString:passedFriend.pictureUrl];
+        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage * image = [UIImage imageWithData:imageData];
+        
+        cell.collectionCellImage.image = image;
+
         
     }
     return cell;

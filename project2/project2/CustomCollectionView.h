@@ -15,4 +15,5 @@
 }
 
 @property UILabel *collectionCellName;
+@property UIImageView *collectionCellImage;
 @end

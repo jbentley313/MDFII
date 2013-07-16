@@ -9,7 +9,7 @@
 #import "CustomCollectionView.h"
 
 @implementation CustomCollectionView
-@synthesize collectionCellName;
+@synthesize collectionCellName, collectionCellImage;
 
 
 - (id)initWithFrame:(CGRect)frame
