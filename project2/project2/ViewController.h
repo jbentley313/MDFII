@@ -15,7 +15,8 @@
     NSDictionary *twitterJSON;
     NSDictionary *twitterFeed;
     
-    NSArray *myFollowers;
+    NSDictionary *myFollower;
+    NSMutableArray *objectsWithFriends;
 }
 
 @property(strong) Friend *Friendobj;

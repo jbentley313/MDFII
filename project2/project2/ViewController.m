@@ -79,15 +79,19 @@
                                         
                                         
                                         //get a dictionary within a twitter dictionary!
-                                        NSDictionary *tweetDictionary = (NSDictionary *)[twitterFeed objectForKey:@"users"];
-//                                        NSLog(@"%@", tweetDictionary);
+                                        NSArray *tweetArrayy = (NSArray *)[twitterFeed objectForKey:@"users"];
+//                                        NSLog(@"%@", tweetArrayy);
                                   
                                         
-                                        for (int i = 0; i < tweetDictionary.count; i++) {
-                                            Friendobj = [[Friend alloc] init];
+                                        for (int i = 0; i < tweetArrayy.count; i++) {
                                             
-                                           Friendobj.namer = [tweetDictionary objectForKey:@"name"];
-                                            NSLog(@"%@", Friendobj.namer);
+                                             myFollower = [tweetArrayy objectAtIndex:i];
+                                            NSLog(@"%@", myFollower);
+                                            
+//                                            Friendobj = [[Friend alloc] init];
+//                                            
+                                          NSString *Friendobjnamer = [myFollower objectForKey:@"name"];
+                                            NSLog(@"%@", Friendobjnamer);
                                             
 //                                            Friendobj.name = (NSString *) [twitterFeed objectForKey:@"name"];
 //                                            Friendobj.pictureUrl = (NSString *) [twitterFeed objectForKey:@"profile_background_image_url"];
