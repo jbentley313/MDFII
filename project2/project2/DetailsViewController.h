@@ -13,6 +13,9 @@
 
 }
 
+@property NSString *name;
+@property NSString *pic;
+
 -(IBAction)onClick:(id)sender;
 
 @end

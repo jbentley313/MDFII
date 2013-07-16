@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BBA376FC1794C39300CD8EC2 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA376FB1794C39300CD8EC2 /* DetailsViewController.m */; };
+		BBA376FE1794C70B00CD8EC2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA376FD1794C70B00CD8EC2 /* Social.framework */; };
+		BBA377001794C71200CD8EC2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA376FF1794C71200CD8EC2 /* Accounts.framework */; };
+		BBA377031794E33900CD8EC2 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA377021794E33900CD8EC2 /* Friend.m */; };
 		BBFA64F91794B8C30029493F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFA64F81794B8C30029493F /* UIKit.framework */; };
 		BBFA64FB1794B8C30029493F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFA64FA1794B8C30029493F /* Foundation.framework */; };
 		BBFA64FD1794B8C30029493F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFA64FC1794B8C30029493F /* CoreGraphics.framework */; };
@@ -25,6 +28,10 @@
 /* Begin PBXFileReference section */
 		BBA376FA1794C39300CD8EC2 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		BBA376FB1794C39300CD8EC2 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		BBA376FD1794C70B00CD8EC2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		BBA376FF1794C71200CD8EC2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		BBA377011794E33900CD8EC2 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		BBA377021794E33900CD8EC2 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		BBFA64F51794B8C30029493F /* project2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFA64F81794B8C30029493F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BBFA64FA1794B8C30029493F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBA377001794C71200CD8EC2 /* Accounts.framework in Frameworks */,
+				BBA376FE1794C70B00CD8EC2 /* Social.framework in Frameworks */,
 				BBFA64F91794B8C30029493F /* UIKit.framework in Frameworks */,
 				BBFA64FB1794B8C30029493F /* Foundation.framework in Frameworks */,
 				BBFA64FD1794B8C30029493F /* CoreGraphics.framework in Frameworks */,
@@ -79,6 +88,8 @@
 		BBFA64F71794B8C30029493F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BBA376FF1794C71200CD8EC2 /* Accounts.framework */,
+				BBA376FD1794C70B00CD8EC2 /* Social.framework */,
 				BBFA64F81794B8C30029493F /* UIKit.framework */,
 				BBFA64FA1794B8C30029493F /* Foundation.framework */,
 				BBFA64FC1794B8C30029493F /* CoreGraphics.framework */,
@@ -91,10 +102,12 @@
 			children = (
 				BBFA65071794B8C30029493F /* AppDelegate.h */,
 				BBFA65081794B8C30029493F /* AppDelegate.m */,
+				BBA377011794E33900CD8EC2 /* Friend.h */,
+				BBA377021794E33900CD8EC2 /* Friend.m */,
 				BBFA65101794B8C30029493F /* MainStoryboard.storyboard */,
-				BBFA651B1794BDB30029493F /* CustomCollectionView.h */,
 				BBA376FA1794C39300CD8EC2 /* DetailsViewController.h */,
 				BBA376FB1794C39300CD8EC2 /* DetailsViewController.m */,
+				BBFA651B1794BDB30029493F /* CustomCollectionView.h */,
 				BBFA651C1794BDB30029493F /* CustomCollectionView.m */,
 				BBFA65131794B8C30029493F /* ViewController.h */,
 				BBFA65141794B8C30029493F /* ViewController.m */,
@@ -188,6 +201,7 @@
 				BBFA65151794B8C30029493F /* ViewController.m in Sources */,
 				BBFA651D1794BDB30029493F /* CustomCollectionView.m in Sources */,
 				BBA376FC1794C39300CD8EC2 /* DetailsViewController.m in Sources */,
+				BBA377031794E33900CD8EC2 /* Friend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

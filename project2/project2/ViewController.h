@@ -11,6 +11,10 @@
 @interface ViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 {
     IBOutlet UICollectionView *theCollectionView;
+    NSDictionary *twitterJSON;
+    NSDictionary *twitterFeed;
 }
+
+
 
 @end

@@ -14,6 +14,7 @@
 @end
 
 @implementation DetailsViewController
+@synthesize pic, name;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
