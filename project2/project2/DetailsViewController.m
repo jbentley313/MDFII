@@ -28,8 +28,14 @@
 - (void)viewDidLoad
 {
     
-     nameFriend.text = self.friendDetailsObject.namer;
+     
+    NSURL * imageURL = [NSURL URLWithString:friendDetailsObject.pictureUrl];
+    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+    UIImage * image = [UIImage imageWithData:imageData];
     
+    
+    nameFriend.text = [NSString stringWithFormat:@"@%@", self.friendDetailsObject.namer];
+    pic.image = image;
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.

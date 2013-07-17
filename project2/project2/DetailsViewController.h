@@ -15,7 +15,7 @@
 }
 
 @property IBOutlet UILabel *nameFriend;
-@property IBOutlet UILabel *pic;
+@property IBOutlet UIImageView *pic;
 
 
 @property(strong) Friend *friendDetailsObject;

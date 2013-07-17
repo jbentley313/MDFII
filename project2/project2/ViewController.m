@@ -76,7 +76,7 @@
                                         
                                         //json object response data
                                         twitterFeed = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
-                                        
+                                        NSLog(@"%@", twitterFeed);
                                         
                                         //get a dictionary within a twitter dictionary!
                                         tweetArrayy = (NSArray *)[twitterFeed objectForKey:@"users"];
@@ -92,9 +92,9 @@
                                             
                                             //get string for each name object
                                             self.FriendObj = [[Friend alloc] init];
-                                            friendName = [myFollower objectForKey:@"name"];
+                                            friendName = [myFollower objectForKey:@"screen_name"];
                                             
-                                            //get string for pic url 
+                                            //get string for pic url
                                             friendPic = [myFollower objectForKey:@"profile_image_url_https"];
                                             
                                             
@@ -104,16 +104,10 @@
                                             //set pictureUrl from nsstring
                                             FriendObj.pictureUrl = self.friendPic;
                                             
-                                            //add Dictionary to custom object Friend 
+                                            //add Dictionary to custom object Friend
                                             [self.objectsWithFriends addObject:FriendObj];
-                                            
-                                            
-                                            
-                                            
+
                                         }
-                                        
-                                        
-                                        
                                         
                                         //reload tableview
                                         [theCollectionView reloadData];
@@ -125,17 +119,19 @@
                             }
                             
                         }
-                        
-                        
+
                     }
                     
                 }
-                else
-                {
-                    NSLog(@"no twitter account available");
-                }
                 
-            }];
+              //if access not granted alert
+             else if (! granted)
+             {
+                 NSString *message = @"No Twitter account associated with this phone.";
+                 [self DisplayAlertWithString:message];
+             }
+             
+             }];
             
         }
         
@@ -157,15 +153,16 @@
     if (cell != nil) {
         Friend *passedFriend = [objectsWithFriends objectAtIndex:indexPath.row];
         
-        cell.collectionCellName.text = passedFriend.namer;
-        
+        //display screen name with the '@' symbol at the beginning
+        cell.collectionCellName.text =[NSString stringWithFormat:@"@%@", passedFriend.namer];
+        ;
         //set cell thumb pics
         NSURL * imageURL = [NSURL URLWithString:passedFriend.pictureUrl];
         NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
         UIImage * image = [UIImage imageWithData:imageData];
         
         cell.collectionCellImage.image = image;
-
+        
         
         
     }
@@ -204,16 +201,22 @@
         
         DetailsViewController *detail = (DetailsViewController *)segue.destinationViewController;
         
+        //pass the friend object to detailsviewcontroller
         detail.friendDetailsObject = friendSelected;
-        NSLog(@"%@", friendSelected);
         
-//        //set the tweetObject Dictionary to selected tweet
-//        tweetDetailViewController.tweetObject = tweetSelected;
         
         
     }
 }
 
+//alert
+-(void)DisplayAlertWithString:(NSString*)alert
+{
+    UIAlertView *alertViewMsg = [[UIAlertView alloc] initWithTitle:@"Alert" message:alert delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+    if (alertViewMsg != nil) {
+        [alertViewMsg show];
+    }
+}
 
 
 - (void)didReceiveMemoryWarning
