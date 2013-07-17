@@ -7,14 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Friend.h"
 
 @interface DetailsViewController : UIViewController
 {
 
 }
 
-@property NSString *name;
-@property NSString *pic;
+@property IBOutlet UILabel *nameFriend;
+@property IBOutlet UILabel *pic;
+
+
+@property(strong) Friend *friendDetailsObject;
+
 
 -(IBAction)onClick:(id)sender;
 

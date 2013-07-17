@@ -80,32 +80,34 @@
                                         
                                         //get a dictionary within a twitter dictionary!
                                         tweetArrayy = (NSArray *)[twitterFeed objectForKey:@"users"];
-                                        //                                        NSLog(@"%@", tweetArrayy);
                                         
+                                        //alloc and init the Friend custom object
                                         self.objectsWithFriends = [[NSMutableArray alloc] init];
                                         
+                                        //loop through tweetarrayy
                                         for (int i = 0; i < tweetArrayy.count; i++) {
                                             
-                                            
+                                            //create dictionary from nsarray from JSON
                                             myFollower = [tweetArrayy objectAtIndex:i];
-                                            NSLog(@"%@", myFollower);
                                             
-                                            
+                                            //get string for each name object
                                             self.FriendObj = [[Friend alloc] init];
                                             friendName = [myFollower objectForKey:@"name"];
-                                            //                                            NSLog(@"%@", friendName);
                                             
+                                            //get string for pic url 
                                             friendPic = [myFollower objectForKey:@"profile_image_url_https"];
                                             
+                                            
+                                            //set namer from nsstring
                                             FriendObj.namer = self.friendName;
                                             
+                                            //set pictureUrl from nsstring
                                             FriendObj.pictureUrl = self.friendPic;
-                                            NSLog(@"%@", FriendObj.namer);
-                                            NSLog(@"%@", FriendObj.pictureUrl);
                                             
+                                            //add Dictionary to custom object Friend 
                                             [self.objectsWithFriends addObject:FriendObj];
                                             
-                                            NSLog(@"%@", FriendObj);
+                                            
                                             
                                             
                                         }
@@ -165,6 +167,7 @@
         cell.collectionCellImage.image = image;
 
         
+        
     }
     return cell;
 }
@@ -191,8 +194,25 @@
     return 0;
 }
 
-
-
+//segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"detailsSeg"]) {
+        UICollectionViewCell *cell = (UICollectionViewCell *)sender;
+        NSIndexPath *indexPath = [theCollectionView indexPathForCell:cell ];
+        Friend *friendSelected = [objectsWithFriends objectAtIndex:indexPath.row];
+        
+        DetailsViewController *detail = (DetailsViewController *)segue.destinationViewController;
+        
+        detail.friendDetailsObject = friendSelected;
+        NSLog(@"%@", friendSelected);
+        
+//        //set the tweetObject Dictionary to selected tweet
+//        tweetDetailViewController.tweetObject = tweetSelected;
+        
+        
+    }
+}
 
 
 

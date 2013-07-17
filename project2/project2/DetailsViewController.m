@@ -14,7 +14,7 @@
 @end
 
 @implementation DetailsViewController
-@synthesize pic, name;
+@synthesize pic, nameFriend, friendDetailsObject;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +27,10 @@
 
 - (void)viewDidLoad
 {
+    
+     nameFriend.text = self.friendDetailsObject.namer;
+    
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
