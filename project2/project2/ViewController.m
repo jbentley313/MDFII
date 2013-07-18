@@ -201,13 +201,15 @@
         //display screen name with the '@' symbol at the beginning
         cell.collectionCellName.text =[NSString stringWithFormat:@"@%@", passedFriend.namer];
         ;
+        
         //set cell thumb pics
         NSURL * imageURL = [NSURL URLWithString:passedFriend.pictureUrl];
-        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-        UIImage * image = [UIImage imageWithData:imageData];
-        
-        cell.collectionCellImage.image = image;
-        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.collectionCellImage.image = [UIImage imageWithData:imageData];
+            });
+        });
         
         
     }
@@ -262,4 +264,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+//load cells
+//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
+//{
+//    CustomCollectionView *cell = [theCollectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCelli" forIndexPath:indexPath];
+//    
+//    if (cell != nil) {
+//        Friend *passedFriend = [objectsWithFriends objectAtIndex:indexPath.row];
+//        
+//        //display screen name with the '@' symbol at the beginning
+//        cell.collectionCellName.text =[NSString stringWithFormat:@"@%@", passedFriend.namer];
+//        ;
+//        //set cell thumb pics
+//        NSURL * imageURL = [NSURL URLWithString:passedFriend.pictureUrl];
+//        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+//        UIImage * image = [UIImage imageWithData:imageData];
+//        
+//        cell.collectionCellImage.image = image;
+//        
+//        
+//        
+//    }
+//    return cell;
+//}
 @end
+
+
