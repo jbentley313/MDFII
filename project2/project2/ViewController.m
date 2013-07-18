@@ -24,7 +24,7 @@
 
 
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidLoad
 {
 //    reachability
     
@@ -47,6 +47,7 @@
     
     else {
         
+        //alert no internet connection detected
         NSString *message = @"No internet connection detected.";
         [self DisplayAlertWithString:message];
 
@@ -64,6 +65,7 @@
     }
 }
 
+//get twitter 
 -(void)getTimeLine;
 {
     //accountStore
