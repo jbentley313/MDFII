@@ -9,17 +9,18 @@
 #import "Friend.h"
 
 @implementation Friend
-@synthesize pictureUrl, namer;
+@synthesize pictureUrl, namer, img;
 
 
 
--(id)initWithName:(NSString*)friendName  picUrl:(NSString*)picUrl;
+-(id)initWithName:(NSString*)friendName  picUrl:(NSString*)picUrl img:(UIImage*)img;
 {
     
     if ((self = [super init]))
     {
         namer = friendName;
         pictureUrl = picUrl;
+        
     }
     return self;
 }

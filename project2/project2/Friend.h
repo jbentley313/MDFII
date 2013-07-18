@@ -16,7 +16,8 @@
 
 @property NSString *namer;
 @property NSString *pictureUrl;
+@property (weak)UIImage *img;
 
--(id)initWithName:(NSString*)friendName  picUrl:(NSString*)picUrl;
+-(id)initWithName:(NSString*)friendName  picUrl:(NSString*)picUrl img:(UIImage*)img;
 
 @end

@@ -203,11 +203,18 @@
         ;
         
         //set cell thumb pics
+        
+        
+        
         NSURL * imageURL = [NSURL URLWithString:passedFriend.pictureUrl];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
             dispatch_async(dispatch_get_main_queue(), ^{
-                cell.collectionCellImage.image = [UIImage imageWithData:imageData];
+                
+                UIImage *temImg = [UIImage imageWithData:imageData];
+                
+                cell.collectionCellImage.image = temImg;
+                passedFriend.img = temImg;
             });
         });
         
