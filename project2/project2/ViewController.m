@@ -26,10 +26,10 @@
 
 - (void)viewDidLoad
 {
-//    reachability
+    //    reachability
     
     [self checkTheInterwebs];
-
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -41,7 +41,7 @@
     if (data) {
         
         //get twitter timeline call
-       [self getTimeLine];
+        [self getTimeLine];
         
     }
     
@@ -50,9 +50,9 @@
         //alert no internet connection detected
         NSString *message = @"No internet connection detected.";
         [self DisplayAlertWithString:message];
-
+        
     }
-
+    
 }
 
 
@@ -65,7 +65,7 @@
     }
 }
 
-//get twitter 
+//get twitter
 -(void)getTimeLine;
 {
     //accountStore
@@ -87,7 +87,7 @@
                     NSLog(@"not granted top");
                 }
                 
-               else if (granted)
+                else if (granted)
                 {
                     
                     //array of accounts
@@ -145,12 +145,17 @@
                                             //set namer from nsstring
                                             FriendObj.namer = self.friendName;
                                             
-                                            //set pictureUrl from nsstring
-                                            FriendObj.pictureUrl = self.friendPic;
+                                            //set cell thumb pics
+                                            NSURL * imageURL = [NSURL URLWithString:friendPic];
+                                            NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+                                            UIImage * image = [UIImage imageWithData:imageData];
+                                            
+                                            FriendObj.imgP = image;
+                                            
                                             
                                             //add Dictionary to custom object Friend
                                             [self.objectsWithFriends addObject:FriendObj];
-
+                                            
                                         }
                                         
                                         //reload tableview
@@ -163,14 +168,14 @@
                             }
                             
                         }
-
+                        
                     }
                     
                 }
                 
-             
-             
-             }];
+                
+                
+            }];
             
         }
         
@@ -203,18 +208,7 @@
         ;
         
         //set cell thumb pics
-        
-        NSURL * imageURL = [NSURL URLWithString:passedFriend.pictureUrl];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-            NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                temImg = [UIImage imageWithData:imageData];
-                
-                cell.collectionCellImage.image = temImg;
-                passedFriend.img = temImg;
-            });
-        });
+        cell.collectionCellImage.image = passedFriend.imgP;
         
         
     }
@@ -274,10 +268,10 @@
 //- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 //{
 //    CustomCollectionView *cell = [theCollectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCelli" forIndexPath:indexPath];
-//    
+//
 //    if (cell != nil) {
 //        Friend *passedFriend = [objectsWithFriends objectAtIndex:indexPath.row];
-//        
+//
 //        //display screen name with the '@' symbol at the beginning
 //        cell.collectionCellName.text =[NSString stringWithFormat:@"@%@", passedFriend.namer];
 //        ;
@@ -285,7 +279,7 @@
 //        NSURL * imageURL = [NSURL URLWithString:passedFriend.pictureUrl];
 //        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
 //        UIImage * image = [UIImage imageWithData:imageData];
-//        
+//
 //        cell.collectionCellImage.image = image;
 //        
 //        

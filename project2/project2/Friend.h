@@ -12,12 +12,13 @@
 {
     NSString *namer;
     NSString *pictureUrl;
+    UIImage *imgP;
 }
 
 @property NSString *namer;
 @property NSString *pictureUrl;
-@property (weak)UIImage *img;
+@property UIImage *imgP;
 
--(id)initWithName:(NSString*)friendName  picUrl:(NSString*)picUrl img:(UIImage*)img;
+-(id)initWithName:(NSString*)friendName  picUrl:(NSString*)picUrl imgs:(UIImage*)imgs;
 
 @end

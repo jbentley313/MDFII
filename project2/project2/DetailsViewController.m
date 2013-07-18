@@ -27,15 +27,8 @@
 
 - (void)viewDidLoad
 {
-    
-     
-    NSURL * imageURL = [NSURL URLWithString:friendDetailsObject.pictureUrl];
-    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-    UIImage * image = [UIImage imageWithData:imageData];
-    
-    
-    nameFriend.text = [NSString stringWithFormat:@"@%@", self.friendDetailsObject.namer];
-    pic.image = image;
+     nameFriend.text = [NSString stringWithFormat:@"@%@", self.friendDetailsObject.namer];
+    pic.image = friendDetailsObject.imgP;
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
