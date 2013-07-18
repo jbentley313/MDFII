@@ -19,6 +19,7 @@
     NSMutableArray *objectsWithFriends;
     NSArray *tweetArrayy;
     UIImage *temImg;
+    UIAlertView *alertViewMsg2;
 }
 
 -(void)DisplayAlertWithString:(NSString*)alert;

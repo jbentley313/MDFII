@@ -74,8 +74,8 @@
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     if (accountStore != nil) {
         
-        //display loading alert
-        //        [self DisplayAlertWithString];
+        //loading alert
+        [self DisplayAlertWithIndicator];
         
         //account type
         ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
@@ -174,7 +174,12 @@
                     }
                     
                 }
-                
+                else
+                {
+                    NSString *message = @"No Twitter account associated with this phone.";
+                    [self DisplayAlertWithString:message];
+                    NSLog(@"not granted");
+                }
             }];
             
         }
@@ -185,7 +190,7 @@
         
         NSString *message = @"No Twitter account associated with this phone.";
         [self DisplayAlertWithString:message];
-        NSLog(@"not granted out");
+        NSLog(@"not granted");
     }
 }
 
@@ -205,6 +210,7 @@
         
         //set cell thumb pics
         cell.collectionCellImage.image = passedFriend.imgP;
+        [alertViewMsg2 dismissWithClickedButtonIndex:0 animated:YES];
         
     }
     return cell;
@@ -254,6 +260,27 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//alert
+-(void)DisplayAlertWithIndicator
+{
+    alertViewMsg2 = [[UIAlertView alloc] initWithTitle:@"Loading" message:@"Please wait..." delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+    if (alertViewMsg2 != nil) {
+        
+        [alertViewMsg2 show];
+        
+        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        
+        if (indicator  != nil) {
+            
+            indicator.center = CGPointMake((alertViewMsg2.bounds.size.width/2.0f), (alertViewMsg2.bounds.size.height/2.0f) + 25.0f);
+            
+            [indicator startAnimating];
+            [alertViewMsg2 addSubview:indicator];
+            
+        }
+    }
 }
 
 
