@@ -18,6 +18,7 @@
     NSDictionary *myFollower;
     NSMutableArray *objectsWithFriends;
     NSArray *tweetArrayy;
+    UIImage *temImg;
 }
 
 -(void)DisplayAlertWithString:(NSString*)alert;
