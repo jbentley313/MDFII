@@ -11,6 +11,7 @@
 #import "DetailsViewController.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
+
 //#import "Friend.h"
 
 
@@ -21,14 +22,47 @@
 @implementation ViewController
 @synthesize FriendObj, objectsWithFriends, friendName, friendPic;
 
-- (void)viewDidLoad
+
+
+- (void)viewWillAppear:(BOOL)animated
 {
-    [self getTimeLine];
-    [super viewDidLoad];
+//    reachability
+    
+    [self checkTheInterwebs];
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+//internet connection test
+-(void)checkTheInterwebs
+{
+    NSURL *scriptUrl = [NSURL URLWithString:@"http://www.google.com"];
+    NSData *data = [NSData dataWithContentsOfURL:scriptUrl];
+    if (data) {
+        
+        //get twitter timeline call
+       [self getTimeLine];
+        
+    }
+    
+    else {
+        
+        NSString *message = @"No internet connection detected.";
+        [self DisplayAlertWithString:message];
 
+    }
+
+}
+
+
+//alert
+-(void)DisplayAlertWithString:(NSString*)alert
+{
+    UIAlertView *alertViewMsg = [[UIAlertView alloc] initWithTitle:@"Alert" message:alert delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+    if (alertViewMsg != nil) {
+        [alertViewMsg show];
+    }
+}
 
 -(void)getTimeLine;
 {
@@ -43,7 +77,15 @@
         ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
         if (accountType != nil) {
             [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
-                if (granted)
+                
+                //if access not granted alert
+                if (!granted)                 {
+                    NSString *message = @"Twitter access not granted.";
+                    [self DisplayAlertWithString:message];
+                    NSLog(@"not granted top");
+                }
+                
+               else if (granted)
                 {
                     
                     //array of accounts
@@ -124,19 +166,20 @@
                     
                 }
                 
-              //if access not granted alert
-             else if (! granted)
-             {
-                 NSString *message = @"No Twitter account associated with this phone.";
-                 [self DisplayAlertWithString:message];
-             }
+             
              
              }];
             
         }
         
     }
-    
+    else
+    {
+        
+        NSString *message = @"No Twitter account associated with this phone.";
+        [self DisplayAlertWithString:message];
+        NSLog(@"not granted out");
+    }
 }
 
 
@@ -209,14 +252,6 @@
     }
 }
 
-//alert
--(void)DisplayAlertWithString:(NSString*)alert
-{
-    UIAlertView *alertViewMsg = [[UIAlertView alloc] initWithTitle:@"Alert" message:alert delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
-    if (alertViewMsg != nil) {
-        [alertViewMsg show];
-    }
-}
 
 
 - (void)didReceiveMemoryWarning

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Friend.h"
-
+ 
 @interface ViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 {
     IBOutlet UICollectionView *theCollectionView;
@@ -19,6 +19,9 @@
     NSMutableArray *objectsWithFriends;
     NSArray *tweetArrayy;
 }
+
+-(void)DisplayAlertWithString:(NSString*)alert;
+-(void)getTimeLine;
 
 @property(strong) Friend *FriendObj;
 @property NSMutableArray *objectsWithFriends;
