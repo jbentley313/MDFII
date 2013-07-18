@@ -45,17 +45,22 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+
+}
 
 
 -(void)getTimeLine;
 {
+    //display loading alert
+    [self DisplayAlertWithString];
     //accountStore
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     if (accountStore != nil) {
         
-        //display loading alert
-        [self DisplayAlertWithString];
-        
+                
         //account type
         ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
         if (accountType != nil) {

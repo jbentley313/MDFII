@@ -295,43 +295,6 @@
     <resources>
         <image name="play_48.png" width="48" height="48"/>
     </resources>
-    <classes>
-        <class className="CustomCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tweetLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DetailsViewController" superclassName="ViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="datePosted" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="text" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="textLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UserViewController" superclassName="ViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="description" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="followers" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="following" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pullDown:"/>
-                <relationship kind="outlet" name="twitterTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
