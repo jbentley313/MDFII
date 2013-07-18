@@ -12,7 +12,7 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 
-//#import "Friend.h"
+
 
 
 @interface ViewController ()
@@ -26,12 +26,14 @@
 
 - (void)viewDidLoad
 {
-    //    reachability
     
+    [super viewDidLoad];
     [self checkTheInterwebs];
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
+
+
 
 //internet connection test
 -(void)checkTheInterwebs
@@ -84,7 +86,7 @@
                 if (!granted)                 {
                     NSString *message = @"Twitter access not granted.";
                     [self DisplayAlertWithString:message];
-                    NSLog(@"not granted top");
+                    NSLog(@"access not granted");
                 }
                 
                 else if (granted)
@@ -173,8 +175,6 @@
                     
                 }
                 
-                
-                
             }];
             
         }
@@ -188,10 +188,6 @@
         NSLog(@"not granted out");
     }
 }
-
-
-
-
 
 
 
@@ -209,7 +205,6 @@
         
         //set cell thumb pics
         cell.collectionCellImage.image = passedFriend.imgP;
-        
         
     }
     return cell;
@@ -250,8 +245,6 @@
         //pass the friend object to detailsviewcontroller
         detail.friendDetailsObject = friendSelected;
         
-        
-        
     }
 }
 
@@ -264,29 +257,7 @@
 }
 
 
-//load cells
-//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
-//{
-//    CustomCollectionView *cell = [theCollectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCelli" forIndexPath:indexPath];
-//
-//    if (cell != nil) {
-//        Friend *passedFriend = [objectsWithFriends objectAtIndex:indexPath.row];
-//
-//        //display screen name with the '@' symbol at the beginning
-//        cell.collectionCellName.text =[NSString stringWithFormat:@"@%@", passedFriend.namer];
-//        ;
-//        //set cell thumb pics
-//        NSURL * imageURL = [NSURL URLWithString:passedFriend.pictureUrl];
-//        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-//        UIImage * image = [UIImage imageWithData:imageData];
-//
-//        cell.collectionCellImage.image = image;
-//        
-//        
-//        
-//    }
-//    return cell;
-//}
+
 @end
 
 
