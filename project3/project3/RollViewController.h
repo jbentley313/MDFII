@@ -10,9 +10,9 @@
 
 @interface RollViewController : UIViewController
 {
-    IBOutlet UIImageView *origImage;
+    IBOutlet UIImageView *origImageView;
 }
 
-@property UIImageView *origImage;
+@property UIImage *origImage;
 
 @end

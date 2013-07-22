@@ -25,16 +25,17 @@
 }
 
 
--(void)viewDidAppear:(BOOL)animated
-{
-    
-    
-    [super viewDidAppear:animated];
-}
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//    
+//    
+//    [super viewDidAppear:animated];
+//}
 
 
 - (void)viewDidLoad
 {
+    origImageView.image = origImage;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

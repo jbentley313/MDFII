@@ -38,11 +38,15 @@
                 pickerController.allowsEditing = NO;
                 
             }
-            [self presentViewController:pickerController animated:YES completion:Nil];
+            [self presentViewController:pickerController animated:YES completion:nil];
 
         }
 
 }
+
+
+
+
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
@@ -50,19 +54,25 @@
     UIImage *selectedImage = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     if (selectedImage != nil) {
         originalImage = selectedImage;
+        [self dismissViewControllerAnimated:NO completion:^{[self performSegueWithIdentifier:@"RollViewSeg" sender:info];
+//        [self performSegueWithIdentifier:@"RollViewSeg" sender:info];
+        }];
     }
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
 }
 
 //- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
 //{
-//    
+//    [self dismissViewControllerAnimated:TRUE completion:nil];
 //}
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"RollViewSeg"]) {
+        RollViewController *rollView = (RollViewController*)segue.destinationViewController;
+        rollView.origImage = originalImage;
+
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {
