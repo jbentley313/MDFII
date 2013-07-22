@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -12,13 +12,24 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLD-RK-FIu">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="73" id="gkm-f9-td0"/>
-                                    <constraint firstAttribute="width" constant="78" id="mo4-h4-VCY"/>
-                                </constraints>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BLD-RK-FIu">
+                                <rect key="frame" x="20" y="112" width="78" height="73"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" image="photo_64.png" backgroundImage="Default.png">
+                                <state key="normal" image="photo_64.png" backgroundImage="Default.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClick:" destination="2" eventType="touchUpInside" id="EWz-DV-Swc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SyS-W3-Ufs">
+                                <rect key="frame" x="121" y="112" width="78" height="73"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="video_64.png" backgroundImage="Default.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -26,25 +37,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyS-W3-Ufs">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="78" id="tUk-KJ-IEm"/>
-                                </constraints>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8dA-Sa-160">
+                                <rect key="frame" x="222" y="112" width="78" height="73"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" image="video_64.png" backgroundImage="Default.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dA-Sa-160">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="78" id="ehu-pI-pcj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" image="film_64.png" backgroundImage="Default.png">
+                                <state key="normal" image="film_64.png" backgroundImage="Default.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -57,16 +53,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.8818359375" green="0.78901951619526123" blue="0.33899277735861366" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="8dA-Sa-160" firstAttribute="bottom" secondItem="SyS-W3-Ufs" secondAttribute="bottom" type="default" id="Js5-ag-3T9"/>
-                            <constraint firstItem="SyS-W3-Ufs" firstAttribute="bottom" secondItem="BLD-RK-FIu" secondAttribute="bottom" type="default" id="aUd-vr-fco"/>
-                            <constraint firstAttribute="trailing" secondItem="8dA-Sa-160" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="gcy-51-awa"/>
-                            <constraint firstItem="BLD-RK-FIu" firstAttribute="top" secondItem="3" secondAttribute="top" constant="113" id="lga-4Y-2Ig"/>
-                            <constraint firstItem="SyS-W3-Ufs" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="oor-0y-Sp8"/>
-                            <constraint firstItem="SyS-W3-Ufs" firstAttribute="top" secondItem="BLD-RK-FIu" secondAttribute="top" type="default" id="pwp-f4-JVG"/>
-                            <constraint firstItem="BLD-RK-FIu" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rOd-FG-kr8"/>
-                            <constraint firstItem="8dA-Sa-160" firstAttribute="top" secondItem="SyS-W3-Ufs" secondAttribute="top" type="default" id="scy-Si-CoN"/>
-                        </constraints>
                     </view>
                     <connections>
                         <segue destination="PEv-YC-Qvg" kind="modal" identifier="RollViewSeg" modalTransitionStyle="flipHorizontal" animates="NO" id="Mnn-jz-tNk"/>
@@ -74,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="55"/>
+            <point key="canvasLocation" x="-948" y="119"/>
         </scene>
         <!--Roll View Controller-->
         <scene sceneID="1vZ-nY-iJb">
@@ -84,12 +70,13 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mj6-lD-LhW">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="271" id="jTh-CG-aBv"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Mj6-lD-LhW">
+                                <rect key="frame" x="29" y="0.0" width="262" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X65-ta-lvy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="X65-ta-lvy">
+                                <rect key="frame" x="128" y="492" width="65" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Close">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -102,23 +89,54 @@
                                     <action selector="onClick:" destination="PEv-YC-Qvg" eventType="touchUpInside" id="G3g-3o-EC3"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="iTc-c2-vZw">
+                                <rect key="frame" x="29" y="203" width="262" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aHG-Oc-8X1">
+                                <rect key="frame" x="61" y="491" width="74" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClick:" destination="PEv-YC-Qvg" eventType="touchUpInside" id="xW9-z2-msU"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YBM-jA-MOS">
+                                <rect key="frame" x="183" y="491" width="76" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClick:" destination="PEv-YC-Qvg" eventType="touchUpInside" id="KaY-bK-ijG"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Mj6-lD-LhW" firstAttribute="leading" secondItem="Qoz-ID-ndj" secondAttribute="leading" type="default" id="Kuk-pg-a4f"/>
-                            <constraint firstItem="X65-ta-lvy" firstAttribute="centerX" secondItem="Mj6-lD-LhW" secondAttribute="centerX" type="default" id="MOK-Fb-8Q8"/>
-                            <constraint firstItem="Mj6-lD-LhW" firstAttribute="top" secondItem="Qoz-ID-ndj" secondAttribute="top" constant="8" id="OhS-qd-bLr"/>
-                            <constraint firstAttribute="bottom" secondItem="X65-ta-lvy" secondAttribute="bottom" constant="88" id="bB9-HJ-xLE"/>
-                            <constraint firstItem="Mj6-lD-LhW" firstAttribute="trailing" secondItem="Qoz-ID-ndj" secondAttribute="trailing" type="default" id="qej-Zd-MPq"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.4815848214285714" green="0.4815848214285714" blue="0.4815848214285714" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="cancelBtn" destination="aHG-Oc-8X1" id="BtA-FI-PVS"/>
+                        <outlet property="closeBtn" destination="X65-ta-lvy" id="yhs-Hi-GNV"/>
+                        <outlet property="cropImageView" destination="iTc-c2-vZw" id="i9f-I8-RpZ"/>
                         <outlet property="origImageView" destination="Mj6-lD-LhW" id="0Ed-am-uJM"/>
+                        <outlet property="saveBtn" destination="YBM-jA-MOS" id="2Yx-0X-cml"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ulv-7D-UjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="733" y="89"/>
+            <point key="canvasLocation" x="-467" y="119"/>
         </scene>
     </scenes>
     <resources>
@@ -128,14 +146,15 @@
         <image name="video_64.png" width="64" height="64"/>
     </resources>
     <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
         <class className="RollViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RollViewController.h"/>
             <relationships>
                 <relationship kind="action" name="onClick:"/>
+                <relationship kind="outlet" name="cancelBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="closeBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cropImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="origImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="saveBtn" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">

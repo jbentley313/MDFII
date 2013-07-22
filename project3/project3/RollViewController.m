@@ -13,7 +13,7 @@
 @end
 
 @implementation RollViewController
-@synthesize origImage;
+@synthesize origImage, cropImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,21 +25,41 @@
 }
 
 
--(void)viewDidAppear:(BOOL)animated
-{
-    origImageView.image = origImage;
-    
-    [super viewDidAppear:animated];
-}
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//       
+//    [super viewDidAppear:animated];
+//}
 
 
 -(IBAction)onClick:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    UIButton *button = (UIButton*)sender;
+    if (button.tag == 0) {
+         [self dismissViewControllerAnimated:YES completion:nil];
+    } else if (button.tag == 1) {
+        
+    }
+   
 }
 
 - (void)viewDidLoad
 {
+    origImageView.image = origImage;
+    cropImageView.image = cropImage;
+    
+    if (cropImageView.image != NULL) {
+        saveBtn.hidden = NO;
+        cancelBtn.hidden = NO;
+        closeBtn.hidden = YES;
+    } else if (cropImageView.image == NULL) {
+        closeBtn.hidden = YES;
+        saveBtn.hidden = YES;
+        cancelBtn.hidden = YES;
+        
+    }
+    NSLog(@"%@", cropImage);
+
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.

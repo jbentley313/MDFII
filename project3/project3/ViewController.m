@@ -14,7 +14,7 @@
 @end
 
 @implementation ViewController
-@synthesize originalImage;
+@synthesize originalImage, croppedImage;
 
 - (void)viewDidLoad
 {
@@ -40,6 +40,16 @@
             }
             [self presentViewController:pickerController animated:YES completion:nil];
 
+        }  else if (button.tag == 1) {
+            UIImagePickerController *pickerController = [[UIImagePickerController alloc] init];
+            if (pickerController != nil) {
+                pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+                
+                pickerController.delegate = self;
+                pickerController.allowsEditing = YES;
+                
+            }
+            [self presentViewController:pickerController animated:YES completion:nil];
         }
 
 }
@@ -52,10 +62,13 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
 {
     UIImage *selectedImage = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    UIImage *croppedImagePass = [info objectForKey:@"UIImagePickerControllerEditedImage"];
     if (selectedImage != nil) {
         originalImage = selectedImage;
+        croppedImage = croppedImagePass;
+        NSLog(@"%@", info);
         [self dismissViewControllerAnimated:NO completion:^{[self performSegueWithIdentifier:@"RollViewSeg" sender:info];
-//        [self performSegueWithIdentifier:@"RollViewSeg" sender:info];
+
         }];
     }
 }
@@ -70,6 +83,7 @@
     if ([segue.identifier isEqualToString:@"RollViewSeg"]) {
         RollViewController *rollView = (RollViewController*)segue.destinationViewController;
         rollView.origImage = originalImage;
+        rollView.cropImage = croppedImage;
 
     }
 }

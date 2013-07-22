@@ -14,5 +14,6 @@
 }
 -(IBAction)onClick:(id)sender;
 @property UIImage *originalImage;
+@property UIImage *croppedImage;
 
 @end

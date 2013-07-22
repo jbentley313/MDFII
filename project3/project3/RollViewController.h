@@ -11,8 +11,13 @@
 @interface RollViewController : UIViewController 
 {
     IBOutlet UIImageView *origImageView;
+    IBOutlet UIImageView *cropImageView;
+    IBOutlet UIButton *cancelBtn;
+    IBOutlet UIButton *saveBtn;
+    IBOutlet UIButton *closeBtn;
 }
 
 @property UIImage *origImage;
+@property UIImage *cropImage;
 -(IBAction)onClick:(id)sender;
 @end
