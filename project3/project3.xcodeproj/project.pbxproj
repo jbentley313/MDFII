@@ -18,6 +18,10 @@
 		BB54DA4C179C8838009C9C04 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB54DA4B179C8838009C9C04 /* Default-568h@2x.png */; };
 		BB54DA4F179C8838009C9C04 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB54DA4D179C8838009C9C04 /* MainStoryboard.storyboard */; };
 		BB54DA52179C8838009C9C04 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB54DA51179C8838009C9C04 /* ViewController.m */; };
+		BB54DA5B179C8B39009C9C04 /* film_64.png in Resources */ = {isa = PBXBuildFile; fileRef = BB54DA58179C8B39009C9C04 /* film_64.png */; };
+		BB54DA5C179C8B39009C9C04 /* video_64.png in Resources */ = {isa = PBXBuildFile; fileRef = BB54DA59179C8B39009C9C04 /* video_64.png */; };
+		BB54DA5D179C8B39009C9C04 /* photo_64.png in Resources */ = {isa = PBXBuildFile; fileRef = BB54DA5A179C8B39009C9C04 /* photo_64.png */; };
+		BB83406E179CBE2D0045DAA9 /* RollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB83406D179CBE2D0045DAA9 /* RollViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,11 @@
 		BB54DA4E179C8838009C9C04 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BB54DA50179C8838009C9C04 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BB54DA51179C8838009C9C04 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BB54DA58179C8B39009C9C04 /* film_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = film_64.png; sourceTree = "<group>"; };
+		BB54DA59179C8B39009C9C04 /* video_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_64.png; sourceTree = "<group>"; };
+		BB54DA5A179C8B39009C9C04 /* photo_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_64.png; sourceTree = "<group>"; };
+		BB83406C179CBE2D0045DAA9 /* RollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollViewController.h; sourceTree = "<group>"; };
+		BB83406D179CBE2D0045DAA9 /* RollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +92,11 @@
 		BB54DA3B179C8838009C9C04 /* project3 */ = {
 			isa = PBXGroup;
 			children = (
+				BB54DA58179C8B39009C9C04 /* film_64.png */,
+				BB54DA59179C8B39009C9C04 /* video_64.png */,
+				BB83406C179CBE2D0045DAA9 /* RollViewController.h */,
+				BB83406D179CBE2D0045DAA9 /* RollViewController.m */,
+				BB54DA5A179C8B39009C9C04 /* photo_64.png */,
 				BB54DA44179C8838009C9C04 /* AppDelegate.h */,
 				BB54DA45179C8838009C9C04 /* AppDelegate.m */,
 				BB54DA4D179C8838009C9C04 /* MainStoryboard.storyboard */,
@@ -163,6 +177,9 @@
 				BB54DA4A179C8838009C9C04 /* Default@2x.png in Resources */,
 				BB54DA4C179C8838009C9C04 /* Default-568h@2x.png in Resources */,
 				BB54DA4F179C8838009C9C04 /* MainStoryboard.storyboard in Resources */,
+				BB54DA5B179C8B39009C9C04 /* film_64.png in Resources */,
+				BB54DA5C179C8B39009C9C04 /* video_64.png in Resources */,
+				BB54DA5D179C8B39009C9C04 /* photo_64.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +193,7 @@
 				BB54DA42179C8838009C9C04 /* main.m in Sources */,
 				BB54DA46179C8838009C9C04 /* AppDelegate.m in Sources */,
 				BB54DA52179C8838009C9C04 /* ViewController.m in Sources */,
+				BB83406E179CBE2D0045DAA9 /* RollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +316,7 @@
 				BB54DA57179C8838009C9C04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

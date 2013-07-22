@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+{
+    
+}
+-(IBAction)onClick:(id)sender;
+@property UIImage *originalImage;
 
 @end
