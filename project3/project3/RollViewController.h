@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RollViewController : UIViewController
+@interface RollViewController : UIViewController 
 {
     IBOutlet UIImageView *origImageView;
 }
 
 @property UIImage *origImage;
-
+-(IBAction)onClick:(id)sender;
 @end

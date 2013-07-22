@@ -25,17 +25,22 @@
 }
 
 
-//-(void)viewDidAppear:(BOOL)animated
-//{
-//    
-//    
-//    [super viewDidAppear:animated];
-//}
+-(void)viewDidAppear:(BOOL)animated
+{
+    origImageView.image = origImage;
+    
+    [super viewDidAppear:animated];
+}
 
+
+-(IBAction)onClick:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)viewDidLoad
 {
-    origImageView.image = origImage;
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
