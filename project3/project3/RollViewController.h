@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RollViewController : UIViewController 
+@interface RollViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     IBOutlet UIImageView *origImageView;
     IBOutlet UIImageView *cropImageView;
