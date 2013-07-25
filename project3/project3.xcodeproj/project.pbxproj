@@ -23,6 +23,7 @@
 		BB54DA5D179C8B39009C9C04 /* photo_64.png in Resources */ = {isa = PBXBuildFile; fileRef = BB54DA5A179C8B39009C9C04 /* photo_64.png */; };
 		BB83406E179CBE2D0045DAA9 /* RollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB83406D179CBE2D0045DAA9 /* RollViewController.m */; };
 		BBD86E1B179DFC5C00F21272 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD86E1A179DFC5C00F21272 /* MobileCoreServices.framework */; };
+		BBF6336D179EEF040096B4E0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF6336C179EEF040096B4E0 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		BB83406C179CBE2D0045DAA9 /* RollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollViewController.h; sourceTree = "<group>"; };
 		BB83406D179CBE2D0045DAA9 /* RollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollViewController.m; sourceTree = "<group>"; };
 		BBD86E1A179DFC5C00F21272 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		BBF6336C179EEF040096B4E0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF6336D179EEF040096B4E0 /* QuartzCore.framework in Frameworks */,
 				BBD86E1B179DFC5C00F21272 /* MobileCoreServices.framework in Frameworks */,
 				BB54DA36179C8838009C9C04 /* UIKit.framework in Frameworks */,
 				BB54DA38179C8838009C9C04 /* Foundation.framework in Frameworks */,
@@ -85,6 +88,7 @@
 		BB54DA34179C8838009C9C04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BBF6336C179EEF040096B4E0 /* QuartzCore.framework */,
 				BBD86E1A179DFC5C00F21272 /* MobileCoreServices.framework */,
 				BB54DA35179C8838009C9C04 /* UIKit.framework */,
 				BB54DA37179C8838009C9C04 /* Foundation.framework */,

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "RollViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
 
@@ -19,6 +20,9 @@
 
 - (void)viewDidLoad
 {
+    [self animateGlow];
+     
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -102,6 +106,8 @@
         NSLog(@"Error Saving File!");
     } else {
         [self DisplayAlertWithString:@"Video Saved!"];
+        
+        
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
@@ -131,6 +137,54 @@
         [alertViewMsg show];
     }
 }
+
+
+//animation experiment 
+-(void)animateGlow
+{
+    theAnimationCam = [[CABasicAnimation alloc]init];
+    theAnimationCam=[CABasicAnimation animationWithKeyPath:@"opacity"];
+    theAnimationCam.duration=.7;
+    theAnimationCam.beginTime=0;
+    theAnimationCam.repeatCount=1;
+    theAnimationCam.autoreverses=YES;
+    theAnimationCam.fromValue=[NSNumber numberWithFloat:1.0];
+    theAnimationCam.toValue=[NSNumber numberWithFloat:0.0];
+    
+    [cam.layer addAnimation:theAnimationCam forKey:@"animateOpacity"];
+    [camLab.layer addAnimation:theAnimationCam forKey:@"animateOpacity"];
+    
+    theAnimationFilm = [[CABasicAnimation alloc] init];
+    theAnimationFilm=[CABasicAnimation animationWithKeyPath:@"opacity"];
+    [theAnimationFilm setDuration:.7];
+    [theAnimationFilm setBeginTime:CACurrentMediaTime()+2];
+    theAnimationFilm.repeatCount=1;
+    theAnimationFilm.autoreverses=YES;
+    theAnimationFilm.fromValue=[NSNumber numberWithFloat:1.0];
+    theAnimationFilm.toValue=[NSNumber numberWithFloat:0.0];
+    
+    
+    [film.layer addAnimation:theAnimationFilm forKey:@"animateOpacity"];
+    [filmLab.layer addAnimation:theAnimationFilm forKey:@"animateOpacity"];
+
+    
+    theAnimationRoll = [[CABasicAnimation alloc] init];
+    theAnimationRoll=[CABasicAnimation animationWithKeyPath:@"opacity"];
+    theAnimationRoll.duration=.7;
+    [theAnimationRoll setBeginTime:CACurrentMediaTime()+4];
+    theAnimationRoll.repeatCount=1;
+    theAnimationRoll.autoreverses=YES;
+    theAnimationRoll.fromValue=[NSNumber numberWithFloat:1.0];
+    theAnimationRoll.toValue=[NSNumber numberWithFloat:0.0];
+    
+
+    [roll.layer addAnimation:theAnimationRoll forKey:@"animateOpacity"];
+    [rollLab.layer addAnimation:theAnimationRoll forKey:@"animateOpacity"];
+    
+        
+}
+
+
 
 
 - (void)didReceiveMemoryWarning

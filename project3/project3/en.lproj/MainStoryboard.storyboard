@@ -57,10 +57,37 @@
                                     <action selector="onClick:" destination="2" eventType="touchUpInside" id="rdq-6N-PkY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Take a picture!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="QLD-Ih-SdT">
+                                <rect key="frame" x="12" y="263" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Shoot a video!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="IBw-B9-Qnf">
+                                <rect key="frame" x="115" y="263" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="View your pics!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="xeQ-E9-l3E">
+                                <rect key="frame" x="215" y="265" width="100" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.8818359375" green="0.78901951619526123" blue="0.33899277735861366" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="cam" destination="BLD-RK-FIu" id="73T-xj-DNJ"/>
+                        <outlet property="camLab" destination="QLD-Ih-SdT" id="3u3-oD-8Ga"/>
+                        <outlet property="film" destination="SyS-W3-Ufs" id="JUd-PF-8Cq"/>
+                        <outlet property="filmLab" destination="IBw-B9-Qnf" id="ndt-T3-Srb"/>
+                        <outlet property="roll" destination="8dA-Sa-160" id="CcE-TQ-nZe"/>
+                        <outlet property="rollLab" destination="xeQ-E9-l3E" id="hOG-qt-ynn"/>
                         <segue destination="PEv-YC-Qvg" kind="modal" identifier="RollViewSeg" modalTransitionStyle="flipHorizontal" animates="NO" id="Mnn-jz-tNk"/>
                     </connections>
                 </viewController>
@@ -82,7 +109,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="X65-ta-lvy">
                                 <rect key="frame" x="128" y="492" width="65" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Close">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -167,6 +194,12 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="onClick:"/>
+                <relationship kind="outlet" name="cam" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="camLab" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="film" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="filmLab" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="roll" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rollLab" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>
