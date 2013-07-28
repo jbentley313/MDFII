@@ -88,35 +88,41 @@
     if (selectedImage != nil) {
         originalImage = selectedImage;
         croppedImage = croppedImagePass;
-        //        NSLog(@"%@", info);
+        
+        //dismiss view and perform segue
         [self dismissViewControllerAnimated:NO completion:^{[self performSegueWithIdentifier:@"RollViewSeg" sender:info];
             
         }];
+        
     } else if (urlString !=nil) {
+        
+        //get path from url
         NSString *videoPath = [urlString path];
         
+        //save video
         UISaveVideoAtPathToSavedPhotosAlbum(videoPath, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
     }
 }
 
 
+//finished saving
 - (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
 {
     if (error != nil) {
+        
+        //error alert
+        [self DisplayAlertWithString:@"There was a problem saving the file."];
         NSLog(@"Error Saving File!");
+        
     } else {
+        
+        //success alert
         [self DisplayAlertWithString:@"Video Saved!"];
         
-        
+        //dismiss viewcontroller
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
-
-//- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
-//{
-//    [self dismissViewControllerAnimated:TRUE completion:nil];
-//}
-
 
 //segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -132,7 +138,7 @@
 //alert
 -(void)DisplayAlertWithString:(NSString*)alert
 {
-    UIAlertView *alertViewMsg = [[UIAlertView alloc] initWithTitle:@"Alert" message:alert delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+    UIAlertView *alertViewMsg = [[UIAlertView alloc] initWithTitle:@"" message:alert delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
     if (alertViewMsg != nil) {
         [alertViewMsg show];
     }
@@ -142,6 +148,8 @@
 //animation experiment 
 -(void)animateGlow
 {
+    
+    //Camera icon and label animation
     theAnimationCam = [[CABasicAnimation alloc]init];
     theAnimationCam=[CABasicAnimation animationWithKeyPath:@"opacity"];
     theAnimationCam.duration=.7;
@@ -154,6 +162,7 @@
     [cam.layer addAnimation:theAnimationCam forKey:@"animateOpacity"];
     [camLab.layer addAnimation:theAnimationCam forKey:@"animateOpacity"];
     
+    //Film icon and label animation
     theAnimationFilm = [[CABasicAnimation alloc] init];
     theAnimationFilm=[CABasicAnimation animationWithKeyPath:@"opacity"];
     [theAnimationFilm setDuration:.7];
@@ -167,7 +176,7 @@
     [film.layer addAnimation:theAnimationFilm forKey:@"animateOpacity"];
     [filmLab.layer addAnimation:theAnimationFilm forKey:@"animateOpacity"];
 
-    
+    //Camera Roll icon and label animation
     theAnimationRoll = [[CABasicAnimation alloc] init];
     theAnimationRoll=[CABasicAnimation animationWithKeyPath:@"opacity"];
     theAnimationRoll.duration=.7;

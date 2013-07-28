@@ -178,31 +178,6 @@
         <image name="photo_64.png" width="64" height="64"/>
         <image name="video_64.png" width="64" height="64"/>
     </resources>
-    <classes>
-        <class className="RollViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RollViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onClick:"/>
-                <relationship kind="outlet" name="cancelBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="closeBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cropImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="origImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="saveBtn" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="onClick:"/>
-                <relationship kind="outlet" name="cam" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="camLab" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="film" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="filmLab" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="roll" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="rollLab" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

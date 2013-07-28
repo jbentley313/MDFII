@@ -25,14 +25,6 @@
 }
 
 
-//-(void)viewDidAppear:(BOOL)animated
-//{
-//       
-//    [super viewDidAppear:animated];
-//}
-
-
-
 - (void)viewDidLoad
 {
     origImageView.image = origImage;
@@ -51,9 +43,7 @@
         cancelBtn.hidden = YES;
         
     }
-    NSLog(@"%@", cropImage);
-
-    
+       
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -68,24 +58,38 @@
         
         [self dismissViewControllerAnimated:YES completion:nil];
         
-        //save button
+    //save button
     } else if (button.tag == 1) {
+        
+        //save original pic to photo album
         UIImageWriteToSavedPhotosAlbum(origImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+        
+        //save edited pic to photo album
         UIImageWriteToSavedPhotosAlbum(cropImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
         
-        [self DisplayAlertWithString:@"Photos saved!"];
-        [self dismissViewControllerAnimated:YES completion:nil];
+       
         
     }
     
 }
 
+
+//finished saving
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     if (error != nil) {
-        NSLog(@"Couldn't save image");
+        
+        //error alert
+        [self DisplayAlertWithString:@"There was a problem saving the file."];
+        
     } else {
-        NSLog(@"Saved image");
+        
+        //success alert
+        [self DisplayAlertWithString:@"Photos saved!"];
+        
+        //dismiss view
+        [self dismissViewControllerAnimated:YES completion:nil];
+        //the success message fires in above code, but if error is present an error message occurs.  I did this to prevent the success code from firing twice (one for each image)
     }
 }
 
@@ -93,7 +97,7 @@
 //alert
 -(void)DisplayAlertWithString:(NSString*)alert
 {
-    UIAlertView *alertViewMsg = [[UIAlertView alloc] initWithTitle:@"Alert" message:alert delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+    UIAlertView *alertViewMsg = [[UIAlertView alloc] initWithTitle:@"" message:alert delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
     if (alertViewMsg != nil) {
         [alertViewMsg show];
     }

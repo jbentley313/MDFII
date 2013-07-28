@@ -102,9 +102,9 @@
 			children = (
 				BB54DA58179C8B39009C9C04 /* film_64.png */,
 				BB54DA59179C8B39009C9C04 /* video_64.png */,
+				BB54DA5A179C8B39009C9C04 /* photo_64.png */,
 				BB83406C179CBE2D0045DAA9 /* RollViewController.h */,
 				BB83406D179CBE2D0045DAA9 /* RollViewController.m */,
-				BB54DA5A179C8B39009C9C04 /* photo_64.png */,
 				BB54DA44179C8838009C9C04 /* AppDelegate.h */,
 				BB54DA45179C8838009C9C04 /* AppDelegate.m */,
 				BB54DA4D179C8838009C9C04 /* MainStoryboard.storyboard */,
