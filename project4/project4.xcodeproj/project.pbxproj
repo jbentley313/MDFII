@@ -18,6 +18,9 @@
 		BB708AE417A5DAB400BFCDBF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB708AE317A5DAB400BFCDBF /* Default-568h@2x.png */; };
 		BB708AE717A5DAB400BFCDBF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB708AE517A5DAB400BFCDBF /* MainStoryboard.storyboard */; };
 		BB708AEA17A5DAB400BFCDBF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB708AE917A5DAB400BFCDBF /* ViewController.m */; };
+		BB708AF117A5DB2B00BFCDBF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB708AF017A5DB2B00BFCDBF /* MediaPlayer.framework */; };
+		BB708AF417A5E12B00BFCDBF /* MovieInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BB708AF317A5E12B00BFCDBF /* MovieInfo.m */; };
+		BB708AF717A5E16D00BFCDBF /* TheaterInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BB708AF617A5E16D00BFCDBF /* TheaterInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,11 @@
 		BB708AE617A5DAB400BFCDBF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BB708AE817A5DAB400BFCDBF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BB708AE917A5DAB400BFCDBF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BB708AF017A5DB2B00BFCDBF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		BB708AF217A5E12B00BFCDBF /* MovieInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInfo.h; sourceTree = "<group>"; };
+		BB708AF317A5E12B00BFCDBF /* MovieInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInfo.m; sourceTree = "<group>"; };
+		BB708AF517A5E16D00BFCDBF /* TheaterInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheaterInfo.h; sourceTree = "<group>"; };
+		BB708AF617A5E16D00BFCDBF /* TheaterInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheaterInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB708AF117A5DB2B00BFCDBF /* MediaPlayer.framework in Frameworks */,
 				BB708ACE17A5DAB300BFCDBF /* UIKit.framework in Frameworks */,
 				BB708AD017A5DAB300BFCDBF /* Foundation.framework in Frameworks */,
 				BB708AD217A5DAB300BFCDBF /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +82,7 @@
 		BB708ACC17A5DAB300BFCDBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB708AF017A5DB2B00BFCDBF /* MediaPlayer.framework */,
 				BB708ACD17A5DAB300BFCDBF /* UIKit.framework */,
 				BB708ACF17A5DAB300BFCDBF /* Foundation.framework */,
 				BB708AD117A5DAB300BFCDBF /* CoreGraphics.framework */,
@@ -89,6 +99,10 @@
 				BB708AE817A5DAB400BFCDBF /* ViewController.h */,
 				BB708AE917A5DAB400BFCDBF /* ViewController.m */,
 				BB708AD417A5DAB300BFCDBF /* Supporting Files */,
+				BB708AF217A5E12B00BFCDBF /* MovieInfo.h */,
+				BB708AF317A5E12B00BFCDBF /* MovieInfo.m */,
+				BB708AF517A5E16D00BFCDBF /* TheaterInfo.h */,
+				BB708AF617A5E16D00BFCDBF /* TheaterInfo.m */,
 			);
 			path = project4;
 			sourceTree = "<group>";
@@ -176,6 +190,8 @@
 				BB708ADA17A5DAB300BFCDBF /* main.m in Sources */,
 				BB708ADE17A5DAB300BFCDBF /* AppDelegate.m in Sources */,
 				BB708AEA17A5DAB400BFCDBF /* ViewController.m in Sources */,
+				BB708AF417A5E12B00BFCDBF /* MovieInfo.m in Sources */,
+				BB708AF717A5E16D00BFCDBF /* TheaterInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
