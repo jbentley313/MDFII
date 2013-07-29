@@ -9,5 +9,18 @@
 #import "TheaterInfo.h"
 
 @implementation TheaterInfo
+@synthesize theaterImage, theaterLoc, theaterName, arrayOfMovies;
+
+-(id)initWithTheaterName:(NSString*)tName tLoc:(NSString*)tLoc tImage:(UIImage*)tImage tMovies:(NSArray*)tMovies;
+{
+    if (self = [super init]) {
+        theaterName = tName;
+        theaterLoc = tLoc;
+        theaterImage = tImage;
+        arrayOfMovies = tMovies;
+    }
+    
+    return self;
+}
 
 @end

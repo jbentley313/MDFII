@@ -9,5 +9,19 @@
 #import <Foundation/Foundation.h>
 
 @interface TheaterInfo : NSObject
+{
+    NSString *theaterName;
+    NSString *theaterLoc;
+    UIImage *theaterImage;
+    NSArray *arrayOfMovies;
+}
+
+
+@property(strong, nonatomic) NSString *theaterName;
+@property(strong, nonatomic) NSString *theaterLoc;
+@property(strong, nonatomic) UIImage *theaterImage;
+@property(strong, nonatomic) NSArray *arrayOfMovies;
+
+-(id)initWithTheaterName:(NSString*)tName tLoc:(NSString*)tLoc tImage:(UIImage*)tImage tMovies:(NSArray*)tMovies;
 
 @end

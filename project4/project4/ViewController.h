@@ -7,10 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TheaterInfo.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     IBOutlet UITableView *movieTableView;
+    NSArray *theaterArray;
+    NSArray *movieArray;
+    
 }
+
+@property NSArray *theaterArray;
+@property NSArray *movieArray;
+
+
 
 @end
