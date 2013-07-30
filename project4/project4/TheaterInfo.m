@@ -8,6 +8,7 @@
 
 #import "TheaterInfo.h"
 
+
 @implementation TheaterInfo
 @synthesize theaterImage, theaterLoc, theaterName, arrayOfMovies;
 

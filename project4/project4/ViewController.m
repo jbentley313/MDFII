@@ -24,7 +24,7 @@
     
     
 
-    
+    //movie info
     MovieInfo *Movie1 = [[MovieInfo alloc] initWithMovieName:@"Touching the Void" mImage:@"img" mTimes:[NSArray arrayWithObjects:@"6:00pm", @"7:00pm", @"8:20pm",nil]];
     MovieInfo *Movie2 = [[MovieInfo alloc] initWithMovieName:@"The Dictator" mImage:@"img" mTimes:[NSArray arrayWithObjects:@"6:30pm", @"7:30pm", @"9:20pm",nil]];
     MovieInfo *Movie3 = [[MovieInfo alloc] initWithMovieName:@"Rock Star" mImage:@"img" mTimes:[NSArray arrayWithObjects:@"5:00pm", @"6:00pm", @"7:40pm",nil]];
@@ -41,14 +41,17 @@
     MovieInfo *Movie14 = [[MovieInfo alloc] initWithMovieName:@"Java's Script" mImage:@"img" mTimes:[NSArray arrayWithObjects:@"6:550pm", @"7:20pm", @"8:25pm",nil]];
     MovieInfo *Movie15 = [[MovieInfo alloc] initWithMovieName:@"We are Movie Fifteen" mImage:@"img" mTimes:[NSArray arrayWithObjects:@"4:50pm", @"7:00pm", @"8:50pm",nil]];
     
+    //array of movies
     movieArray = [[NSArray alloc] initWithObjects:Movie1, Movie2, Movie3, Movie4, Movie5, Movie6, Movie7, Movie8, Movie9, Movie10, Movie11, Movie12, Movie13, Movie14, Movie15, nil];
     
+    //theater info
     TheaterInfo *Theater1 = [[TheaterInfo alloc] initWithTheaterName:@"Loews Hollywood" tLoc:@"Hollywood" tImage:nil tMovies:[NSArray arrayWithObjects:Movie1, Movie2, Movie3, Movie4, Movie5, nil] ];
     
     TheaterInfo *Theater2 = [[TheaterInfo alloc] initWithTheaterName:@"Loews West Hollywood" tLoc:@"West Hollywood" tImage:nil tMovies:[NSArray arrayWithObjects:Movie6, Movie7, Movie8, Movie9, Movie10, nil] ];
     
     TheaterInfo *Theater3 = [[TheaterInfo alloc] initWithTheaterName:@"Arclight" tLoc:@"Hollywood" tImage:nil tMovies:[NSArray arrayWithObjects:Movie11, Movie12, Movie13, Movie14, Movie15, nil] ];
     
+    //theater array
     theaterArray = [[NSArray alloc] initWithObjects:Theater1, Theater2, Theater3, nil];
     
     
@@ -57,55 +60,60 @@
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
-{
-    if (section == 0)
-    {
-        return 3;
-    }
-    else if (section == 1)
-    {
-        return 4;
-    }
-    else if (section == 2)
-    {
-        return 5;
-    }
-    
-    return 0;
-}
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"movieCell"];
+    static NSString *CellIdentifier = @"movieCell";
     
-//    TheaterInfo *passed = [theaterArray objectAtIndex:indexPath.row];
-//    
+    UITableViewCell *cell = [movieTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    TheaterInfo *passedTh = [theaterArray objectAtIndex:indexPath.section];
+    
+    NSString *newStr = [[passedTh.arrayOfMovies objectAtIndex:indexPath.row] movieName];
+   
+    NSLog(@"%@", passedTh.arrayOfMovies);
+    NSLog(@"%@", newStr);
+    
+    
+    
     //set cell text
-//    cell.textLabel.text = passed.theaterName;
-    
-    cell.textLabel.text = @"this is a tablecell";
+    cell.textLabel.text = newStr ;
+
     return cell;
 }
 
 
+
+//number of sections ***********
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.theaterArray count];
+    return [theaterArray count];
+    
 }
 
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+{
+//    NSLog(@"%@", theaterArray);
+//    return [[[self.theaterArray objectAtIndex:section]objectForKey:@"arrayOfMovies"] count];
+    return 5;
+}
+
+
+//title for header 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-//    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, movieTableView.frame.size.width, 30.0f)];
-// 
-//    return headerLabel.text;
-    if (section == 0) {
-        return [self.theaterArray objectAtIndex:section];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, movieTableView.frame.size.width, 30.0f)];
+    
+    headerLabel.text = [[theaterArray objectAtIndex:section] theaterName];
+    
+    return  headerLabel.text;
+    
     }
-    return nil;
-}
 
 
 - (void)didReceiveMemoryWarning

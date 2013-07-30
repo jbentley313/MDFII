@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface TheaterInfo : NSObject
 {
     NSString *theaterName;
