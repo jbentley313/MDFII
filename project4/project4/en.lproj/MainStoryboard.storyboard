@@ -12,17 +12,56 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="k64-ds-wxm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="k64-ds-wxm">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="movieCell" id="Hqq-wW-ICB">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="75" id="Hqq-wW-ICB" customClass="CustomMovieCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rU-Vg-4Ls">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="87Z-lI-9hj"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Movie Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NS8-hp-Ga7">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="27" id="gaS-9N-Edv"/>
+                                                        <constraint firstAttribute="width" constant="217" id="ic3-d2-w8I"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Movie Times" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IlS-jJ-tfe">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="DCs-0U-c5F"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="0rU-Vg-4Ls" firstAttribute="bottom" secondItem="IlS-jJ-tfe" secondAttribute="bottom" type="default" id="DgN-we-3iI"/>
+                                            <constraint firstItem="NS8-hp-Ga7" firstAttribute="top" secondItem="0rU-Vg-4Ls" secondAttribute="top" type="default" id="F0p-ZU-auQ"/>
+                                            <constraint firstItem="NS8-hp-Ga7" firstAttribute="leading" secondItem="0rU-Vg-4Ls" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="JTa-jL-SG9"/>
+                                            <constraint firstItem="0rU-Vg-4Ls" firstAttribute="centerY" secondItem="Hqq-wW-ICB" secondAttribute="centerY" type="default" id="Lah-Um-vSp"/>
+                                            <constraint firstItem="0rU-Vg-4Ls" firstAttribute="leading" secondItem="Hqq-wW-ICB" secondAttribute="leading" constant="7" id="eQn-SA-Nb1"/>
+                                            <constraint firstItem="IlS-jJ-tfe" firstAttribute="top" secondItem="NS8-hp-Ga7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gxa-Fq-5tH"/>
+                                            <constraint firstItem="NS8-hp-Ga7" firstAttribute="trailing" secondItem="IlS-jJ-tfe" secondAttribute="trailing" type="default" id="igF-b9-87q"/>
+                                            <constraint firstItem="IlS-jJ-tfe" firstAttribute="leading" secondItem="0rU-Vg-4Ls" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="wTx-Nu-6H3"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="movieImage" destination="0rU-Vg-4Ls" id="EH5-rJ-GgA"/>
+                                            <outlet property="movieTimes" destination="IlS-jJ-tfe" id="fn3-qf-4eb"/>
+                                            <outlet property="movieTitleLabel" destination="NS8-hp-Ga7" id="9CO-cD-zbA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -48,6 +87,14 @@
         </scene>
     </scenes>
     <classes>
+        <class className="CustomMovieCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomMovieCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="movieImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="movieTimes" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="movieTitleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>

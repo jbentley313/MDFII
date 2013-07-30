@@ -21,6 +21,7 @@
 		BB708AF117A5DB2B00BFCDBF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB708AF017A5DB2B00BFCDBF /* MediaPlayer.framework */; };
 		BB708AF417A5E12B00BFCDBF /* MovieInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BB708AF317A5E12B00BFCDBF /* MovieInfo.m */; };
 		BB708AF717A5E16D00BFCDBF /* TheaterInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BB708AF617A5E16D00BFCDBF /* TheaterInfo.m */; };
+		BBC8D1A717A746E0003253E0 /* CustomMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC8D1A617A746E0003253E0 /* CustomMovieCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		BB708AF317A5E12B00BFCDBF /* MovieInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInfo.m; sourceTree = "<group>"; };
 		BB708AF517A5E16D00BFCDBF /* TheaterInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheaterInfo.h; sourceTree = "<group>"; };
 		BB708AF617A5E16D00BFCDBF /* TheaterInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheaterInfo.m; sourceTree = "<group>"; };
+		BBC8D1A517A746E0003253E0 /* CustomMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMovieCell.h; sourceTree = "<group>"; };
+		BBC8D1A617A746E0003253E0 /* CustomMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMovieCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				BB708AF317A5E12B00BFCDBF /* MovieInfo.m */,
 				BB708AF517A5E16D00BFCDBF /* TheaterInfo.h */,
 				BB708AF617A5E16D00BFCDBF /* TheaterInfo.m */,
+				BBC8D1A517A746E0003253E0 /* CustomMovieCell.h */,
+				BBC8D1A617A746E0003253E0 /* CustomMovieCell.m */,
 			);
 			path = project4;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 				BB708AEA17A5DAB400BFCDBF /* ViewController.m in Sources */,
 				BB708AF417A5E12B00BFCDBF /* MovieInfo.m in Sources */,
 				BB708AF717A5E16D00BFCDBF /* TheaterInfo.m in Sources */,
+				BBC8D1A717A746E0003253E0 /* CustomMovieCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +320,7 @@
 				BB708AEF17A5DAB400BFCDBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
