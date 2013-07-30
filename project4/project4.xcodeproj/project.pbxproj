@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB2763A117A82461006B0A3C /* arthur.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639217A82461006B0A3C /* arthur.png */; };
+		BB2763A217A82461006B0A3C /* avg.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639317A82461006B0A3C /* avg.png */; };
+		BB2763A317A82461006B0A3C /* darknight.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639417A82461006B0A3C /* darknight.png */; };
+		BB2763A417A82461006B0A3C /* diehard.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639517A82461006B0A3C /* diehard.png */; };
+		BB2763A517A82461006B0A3C /* hang3.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639617A82461006B0A3C /* hang3.png */; };
+		BB2763A617A82461006B0A3C /* im3.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639717A82461006B0A3C /* im3.png */; };
+		BB2763A717A82461006B0A3C /* monstuniv.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639817A82461006B0A3C /* monstuniv.png */; };
+		BB2763A817A82461006B0A3C /* pacrim.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639917A82461006B0A3C /* pacrim.png */; };
+		BB2763A917A82461006B0A3C /* prom.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639A17A82461006B0A3C /* prom.png */; };
+		BB2763AA17A82461006B0A3C /* ranger.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639B17A82461006B0A3C /* ranger.png */; };
+		BB2763AB17A82461006B0A3C /* steel.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639C17A82461006B0A3C /* steel.png */; };
+		BB2763AC17A82461006B0A3C /* trek.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639D17A82461006B0A3C /* trek.png */; };
+		BB2763AD17A82461006B0A3C /* ttvoid.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639E17A82461006B0A3C /* ttvoid.png */; };
+		BB2763AE17A82461006B0A3C /* wolv.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639F17A82461006B0A3C /* wolv.png */; };
+		BB2763AF17A82461006B0A3C /* wwz.png in Resources */ = {isa = PBXBuildFile; fileRef = BB2763A017A82461006B0A3C /* wwz.png */; };
 		BB708ACE17A5DAB300BFCDBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB708ACD17A5DAB300BFCDBF /* UIKit.framework */; };
 		BB708AD017A5DAB300BFCDBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB708ACF17A5DAB300BFCDBF /* Foundation.framework */; };
 		BB708AD217A5DAB300BFCDBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB708AD117A5DAB300BFCDBF /* CoreGraphics.framework */; };
@@ -25,6 +40,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB27639217A82461006B0A3C /* arthur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arthur.png; sourceTree = "<group>"; };
+		BB27639317A82461006B0A3C /* avg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avg.png; sourceTree = "<group>"; };
+		BB27639417A82461006B0A3C /* darknight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = darknight.png; sourceTree = "<group>"; };
+		BB27639517A82461006B0A3C /* diehard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diehard.png; sourceTree = "<group>"; };
+		BB27639617A82461006B0A3C /* hang3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hang3.png; sourceTree = "<group>"; };
+		BB27639717A82461006B0A3C /* im3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = im3.png; sourceTree = "<group>"; };
+		BB27639817A82461006B0A3C /* monstuniv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monstuniv.png; sourceTree = "<group>"; };
+		BB27639917A82461006B0A3C /* pacrim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pacrim.png; sourceTree = "<group>"; };
+		BB27639A17A82461006B0A3C /* prom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prom.png; sourceTree = "<group>"; };
+		BB27639B17A82461006B0A3C /* ranger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ranger.png; sourceTree = "<group>"; };
+		BB27639C17A82461006B0A3C /* steel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = steel.png; sourceTree = "<group>"; };
+		BB27639D17A82461006B0A3C /* trek.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trek.png; sourceTree = "<group>"; };
+		BB27639E17A82461006B0A3C /* ttvoid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ttvoid.png; sourceTree = "<group>"; };
+		BB27639F17A82461006B0A3C /* wolv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wolv.png; sourceTree = "<group>"; };
+		BB2763A017A82461006B0A3C /* wwz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wwz.png; sourceTree = "<group>"; };
 		BB708ACA17A5DAB300BFCDBF /* project4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB708ACD17A5DAB300BFCDBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BB708ACF17A5DAB300BFCDBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,6 +95,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB27639117A82461006B0A3C /* pngs */ = {
+			isa = PBXGroup;
+			children = (
+				BB27639217A82461006B0A3C /* arthur.png */,
+				BB27639317A82461006B0A3C /* avg.png */,
+				BB27639417A82461006B0A3C /* darknight.png */,
+				BB27639517A82461006B0A3C /* diehard.png */,
+				BB27639617A82461006B0A3C /* hang3.png */,
+				BB27639717A82461006B0A3C /* im3.png */,
+				BB27639817A82461006B0A3C /* monstuniv.png */,
+				BB27639917A82461006B0A3C /* pacrim.png */,
+				BB27639A17A82461006B0A3C /* prom.png */,
+				BB27639B17A82461006B0A3C /* ranger.png */,
+				BB27639C17A82461006B0A3C /* steel.png */,
+				BB27639D17A82461006B0A3C /* trek.png */,
+				BB27639E17A82461006B0A3C /* ttvoid.png */,
+				BB27639F17A82461006B0A3C /* wolv.png */,
+				BB2763A017A82461006B0A3C /* wwz.png */,
+			);
+			path = pngs;
+			sourceTree = "<group>";
+		};
 		BB708AC117A5DAB300BFCDBF = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +148,7 @@
 		BB708AD317A5DAB300BFCDBF /* project4 */ = {
 			isa = PBXGroup;
 			children = (
+				BB27639117A82461006B0A3C /* pngs */,
 				BB708ADC17A5DAB300BFCDBF /* AppDelegate.h */,
 				BB708ADD17A5DAB300BFCDBF /* AppDelegate.m */,
 				BB708AE517A5DAB400BFCDBF /* MainStoryboard.storyboard */,
@@ -182,6 +235,21 @@
 				BB708AE217A5DAB400BFCDBF /* Default@2x.png in Resources */,
 				BB708AE417A5DAB400BFCDBF /* Default-568h@2x.png in Resources */,
 				BB708AE717A5DAB400BFCDBF /* MainStoryboard.storyboard in Resources */,
+				BB2763A117A82461006B0A3C /* arthur.png in Resources */,
+				BB2763A217A82461006B0A3C /* avg.png in Resources */,
+				BB2763A317A82461006B0A3C /* darknight.png in Resources */,
+				BB2763A417A82461006B0A3C /* diehard.png in Resources */,
+				BB2763A517A82461006B0A3C /* hang3.png in Resources */,
+				BB2763A617A82461006B0A3C /* im3.png in Resources */,
+				BB2763A717A82461006B0A3C /* monstuniv.png in Resources */,
+				BB2763A817A82461006B0A3C /* pacrim.png in Resources */,
+				BB2763A917A82461006B0A3C /* prom.png in Resources */,
+				BB2763AA17A82461006B0A3C /* ranger.png in Resources */,
+				BB2763AB17A82461006B0A3C /* steel.png in Resources */,
+				BB2763AC17A82461006B0A3C /* trek.png in Resources */,
+				BB2763AD17A82461006B0A3C /* ttvoid.png in Resources */,
+				BB2763AE17A82461006B0A3C /* wolv.png in Resources */,
+				BB2763AF17A82461006B0A3C /* wwz.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
