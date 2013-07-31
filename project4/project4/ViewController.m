@@ -10,6 +10,7 @@
 #import "TheaterInfo.h"
 #import "MovieInfo.h"
 #import "CustomMovieCell.h"
+#import "MovieViewController.h"
 
 @interface ViewController ()
 
@@ -152,6 +153,28 @@
 {
 	return 75.0f;
 }
+
+
+//segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"movieDetailsSeg"]) {
+        UITableViewCell *cell = (UITableViewCell *)sender;
+        NSIndexPath *indexPath = [movieTableView indexPathForCell:cell];
+        MovieInfo *movieSelected = [movieArray objectAtIndex:indexPath.row];
+        
+        MovieViewController *movieDetails = (MovieViewController *)segue.destinationViewController;
+        
+        movieDetails.passedMovie = movieSelected;
+        
+        
+    }
+}
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

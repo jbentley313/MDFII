@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB01E64317A8AF0B00B008E3 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB01E64217A8AF0B00B008E3 /* MovieViewController.m */; };
 		BB2763A117A82461006B0A3C /* arthur.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639217A82461006B0A3C /* arthur.png */; };
 		BB2763A217A82461006B0A3C /* avg.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639317A82461006B0A3C /* avg.png */; };
 		BB2763A317A82461006B0A3C /* darknight.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27639417A82461006B0A3C /* darknight.png */; };
@@ -43,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB01E64117A8AF0B00B008E3 /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
+		BB01E64217A8AF0B00B008E3 /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		BB27639217A82461006B0A3C /* arthur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arthur.png; sourceTree = "<group>"; };
 		BB27639317A82461006B0A3C /* avg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avg.png; sourceTree = "<group>"; };
 		BB27639417A82461006B0A3C /* darknight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = darknight.png; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				BB708AF617A5E16D00BFCDBF /* TheaterInfo.m */,
 				BBC8D1A517A746E0003253E0 /* CustomMovieCell.h */,
 				BBC8D1A617A746E0003253E0 /* CustomMovieCell.m */,
+				BB01E64117A8AF0B00B008E3 /* MovieViewController.h */,
+				BB01E64217A8AF0B00B008E3 /* MovieViewController.m */,
 			);
 			path = project4;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				BB708AF417A5E12B00BFCDBF /* MovieInfo.m in Sources */,
 				BB708AF717A5E16D00BFCDBF /* TheaterInfo.m in Sources */,
 				BBC8D1A717A746E0003253E0 /* CustomMovieCell.m in Sources */,
+				BB01E64317A8AF0B00B008E3 /* MovieViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
