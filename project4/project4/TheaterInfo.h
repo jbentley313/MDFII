@@ -13,16 +13,16 @@
 {
     NSString *theaterName;
     NSString *theaterLoc;
-    UIImage *theaterImage;
+    NSString *theaterImage;
     NSArray *arrayOfMovies;
 }
 
 
 @property(strong, nonatomic) NSString *theaterName;
 @property(strong, nonatomic) NSString *theaterLoc;
-@property(strong, nonatomic) UIImage *theaterImage;
+@property(strong, nonatomic) NSString *theaterImage;
 @property(strong, nonatomic) NSArray *arrayOfMovies;
 
--(id)initWithTheaterName:(NSString*)tName tLoc:(NSString*)tLoc tImage:(UIImage*)tImage tMovies:(NSArray*)tMovies;
+-(id)initWithTheaterName:(NSString*)tName tLoc:(NSString*)tLoc tImage:(NSString*)tImage tMovies:(NSArray*)tMovies;
 
 @end

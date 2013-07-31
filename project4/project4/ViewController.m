@@ -17,6 +17,7 @@
 
 @implementation ViewController
 @synthesize theaterArray, movieArray;
+//theaterHeaderImageView, theaterHeaderLocation, theaterHeaderName
 
 - (void)viewDidLoad
 {
@@ -46,11 +47,11 @@
     movieArray = [[NSArray alloc] initWithObjects:Movie1, Movie2, Movie3, Movie4, Movie5, Movie6, Movie7, Movie8, Movie9, Movie10, Movie11, Movie12, Movie13, Movie14, Movie15, nil];
     
     //theater info
-    TheaterInfo *Theater1 = [[TheaterInfo alloc] initWithTheaterName:@"Loews AMC" tLoc:@"Santa Monica" tImage:nil tMovies:[NSArray arrayWithObjects:Movie1, Movie2, Movie3, Movie4, Movie5, nil] ];
+    TheaterInfo *Theater1 = [[TheaterInfo alloc] initWithTheaterName:@"Loews AMC" tLoc:@"Santa Monica" tImage:@"loews.png" tMovies:[NSArray arrayWithObjects:Movie1, Movie2, Movie3, Movie4, Movie5, nil] ];
     
-    TheaterInfo *Theater2 = [[TheaterInfo alloc] initWithTheaterName:@"El Capitan" tLoc:@"Los Angeles" tImage:nil tMovies:[NSArray arrayWithObjects:Movie6, Movie7, Movie8, Movie9, Movie10, nil] ];
+    TheaterInfo *Theater2 = [[TheaterInfo alloc] initWithTheaterName:@"El Capitan" tLoc:@"Los Angeles" tImage:@"capt.png" tMovies:[NSArray arrayWithObjects:Movie6, Movie7, Movie8, Movie9, Movie10, nil] ];
     
-    TheaterInfo *Theater3 = [[TheaterInfo alloc] initWithTheaterName:@"Arclight" tLoc:@"Hollywood" tImage:nil tMovies:[NSArray arrayWithObjects:Movie11, Movie12, Movie13, Movie14, Movie15, nil] ];
+    TheaterInfo *Theater3 = [[TheaterInfo alloc] initWithTheaterName:@"Arclight" tLoc:@"Hollywood" tImage:@"arclight.png" tMovies:[NSArray arrayWithObjects:Movie11, Movie12, Movie13, Movie14, Movie15, nil] ];
     
     //theater array
     theaterArray = [[NSArray alloc] initWithObjects:Theater1, Theater2, Theater3, nil];
@@ -112,17 +113,45 @@
 }
 
 
-//title for header
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//header for cells
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, movieTableView.frame.size.width, 30.0f)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, movieTableView.frame.size.width, 75.0f)];
+    TheaterInfo *passedTheater = [theaterArray objectAtIndex:section];
+
+    UILabel *headerTheaterLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0f, 20.0f, 100.0f, 20.0f)];
+    UILabel *headerLocLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0f, 25.0f, 100.0f, 50.0f)];
     
-    headerLabel.text = [[theaterArray objectAtIndex:section] theaterName];
+
+    NSString *theaterImgString = passedTheater.theaterImage;
+    UIImage *theaterImage = [UIImage imageNamed:theaterImgString];
+
+
+
+    UIImageView *headerImageView = [[UIImageView alloc] initWithImage:theaterImage];
+    headerImageView.frame = (CGRectMake(230.0f, 6.5f, 60.0f, 60.0f));
+
+    headerTheaterLabel.text = [[theaterArray objectAtIndex:section] theaterName];
+    headerView.backgroundColor = [UIColor grayColor];
+    headerLocLabel.text = [[theaterArray objectAtIndex:section] theaterLoc];
+    headerLocLabel.font = [UIFont boldSystemFontOfSize:12];
+    headerLocLabel.backgroundColor = [UIColor grayColor];
+    headerTheaterLabel.backgroundColor = [UIColor grayColor];
     
-    return  headerLabel.text;
     
+    [headerView addSubview:headerLocLabel];
+    [headerView addSubview:headerTheaterLabel];
+    [headerView addSubview:headerImageView];
+    
+    return headerView;
+
 }
 
+//header section height
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+	return 75.0f;
+}
 
 - (void)didReceiveMemoryWarning
 {

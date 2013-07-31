@@ -20,7 +20,9 @@
 
 @property NSArray *theaterArray;
 @property NSArray *movieArray;
-
+//@property IBOutlet UILabel *theaterHeaderName;
+//@property IBOutlet UILabel *theaterHeaderLocation;
+//@property IBOutlet UIImageView *theaterHeaderImageView;
 
 
 @end
