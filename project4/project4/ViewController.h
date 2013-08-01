@@ -10,6 +10,7 @@
 #import "TheaterInfo.h"
 
 
+
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     IBOutlet UITableView *movieTableView;

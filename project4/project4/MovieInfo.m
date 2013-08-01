@@ -9,18 +9,18 @@
 #import "MovieInfo.h"
 
 @implementation MovieInfo
-@synthesize movieImage, movieName, movieTimes;
+@synthesize movieImage, movieName, movieTimes, movieTrailerLink;
 
 
 
 
--(id)initWithMovieName:(NSString*)mName mImage:(NSString*)mImage mTimes:(NSArray*)mTimes;
+-(id)initWithMovieName:(NSString*)mName mImage:(NSString*)mImage mTimes:(NSArray*)mTimes trailerLink:(NSString*)trailerLink;
 {
     if (self = [super init]) {
         movieName = mName;
         movieImage = mImage;
         movieTimes = mTimes;
-
+        movieTrailerLink = trailerLink;
     }
     return self;
 }

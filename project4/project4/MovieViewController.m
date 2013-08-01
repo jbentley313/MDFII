@@ -7,13 +7,14 @@
 //
 
 #import "MovieViewController.h"
+//#import <MediaPlayer/MediaPlayer.h>
 
 @interface MovieViewController ()
 
 @end
 
 @implementation MovieViewController
-@synthesize passedMovie;
+@synthesize passedMovie, movieDetailImage, movieDetailTimes, movieDetailTitle;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,11 +25,55 @@
     return self;
 }
 
+
+
+
 - (void)viewDidLoad
 {
+    
+    movieDetailTitle.text = passedMovie.movieName;
+    
+    
+    
+    UIImage *movieImgString = [UIImage imageNamed:passedMovie.movieImage];
+    movieDetailImage.image = movieImgString;
+    
+    
+    NSArray *movieTimes = passedMovie.movieTimes;
+    NSMutableString * result = [[NSMutableString alloc] init];
+    for (NSObject * movieTimeObjs in movieTimes)
+    {
+        [result appendString:[movieTimeObjs description]];
+    }
+    
+    
+    movieDetailTimes.text = result;
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+
+
+-(IBAction)onClick:(id)sender;
+{
+    //movie trailer
+    fileUrl = [NSURL URLWithString:passedMovie.movieTrailerLink];
+    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:fileUrl];
+    
+    if (moviePlayer != nil) {
+        [self.view addSubview:moviePlayer.view];
+        
+        moviePlayer.fullscreen = true;
+        [moviePlayer play];
+//        [moviePlayer stop];
+    }
+}
+
+-(IBAction)onBack:(id)sender;
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

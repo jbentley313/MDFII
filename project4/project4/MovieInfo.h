@@ -12,14 +12,16 @@
 {
     NSString *movieImage;
     NSString *movieName;
+    NSString *movieTrailerLink;
     NSArray *movieTimes;
 }
 
 @property(strong, nonatomic) NSString *movieImage;
 @property(strong, nonatomic) NSString *movieName;
+@property(strong, nonatomic) NSString *movieTrailerLink;
 @property(strong, nonatomic) NSArray *movieTimes;
 
--(id)initWithMovieName:(NSString*)mName mImage:(NSString*)mImage mTimes:(NSArray*)mTimes;
+-(id)initWithMovieName:(NSString*)mName mImage:(NSString*)mImage mTimes:(NSArray*)mTimes trailerLink:(NSString*)trailerLink;
 
 
 @end
