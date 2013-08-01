@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="7HM-9Z-nU1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller - Movie Listings-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="k64-ds-wxm">
@@ -72,7 +72,7 @@
                                             <outlet property="movieImage" destination="0rU-Vg-4Ls" id="EH5-rJ-GgA"/>
                                             <outlet property="movieTimes" destination="IlS-jJ-tfe" id="fn3-qf-4eb"/>
                                             <outlet property="movieTitleLabel" destination="NS8-hp-Ga7" id="9CO-cD-zbA"/>
-                                            <segue destination="n2l-FN-mOH" kind="modal" identifier="movieDetailsSeg" id="Akz-u3-Sg3"/>
+                                            <segue destination="n2l-FN-mOH" kind="push" identifier="movieDetailsSeg" id="Akz-u3-Sg3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -90,19 +90,21 @@
                             <constraint firstItem="k64-ds-wxm" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="yps-j7-AVw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Movie Listings" id="V1A-JW-1zq"/>
                     <connections>
                         <outlet property="movieTableView" destination="k64-ds-wxm" id="Nwq-XI-sgy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="642" y="27"/>
         </scene>
         <!--Movie View Controller-->
         <scene sceneID="f19-ty-XxY">
             <objects>
                 <viewController id="n2l-FN-mOH" customClass="MovieViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t7E-Z6-DSs">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyK-39-29E">
@@ -116,14 +118,15 @@
                                 </state>
                                 <connections>
                                     <action selector="onClick:" destination="n2l-FN-mOH" eventType="touchUpInside" id="0F1-Om-j9v"/>
-                                    <segue destination="jcG-Jq-OBu" kind="modal" identifier="playItSegue" id="mEM-OL-8RB"/>
+                                    <segue destination="jcG-Jq-OBu" kind="push" identifier="playItSegue" id="mEM-OL-8RB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Movie Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BLz-ot-xx5">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="rvb-ot-hJ9"/>
+                                    <constraint firstAttribute="height" constant="45" id="MCF-A6-5Z9"/>
+                                    <constraint firstAttribute="width" constant="208" id="cDQ-G5-FhN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -132,7 +135,7 @@
                                     <constraint firstAttribute="height" constant="23" id="G3d-CP-QR9"/>
                                     <constraint firstAttribute="width" constant="173" id="TKV-rK-g37"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -142,37 +145,17 @@
                                     <constraint firstAttribute="height" constant="205" id="hfi-8c-VdY"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4l-P7-kUx">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="oj1-w9-PhE"/>
-                                    <constraint firstAttribute="height" constant="34" id="pbc-ba-Tan"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="back">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onBack:" destination="n2l-FN-mOH" eventType="touchUpInside" id="FId-fI-XSE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tyK-39-29E" firstAttribute="centerX" secondItem="t7E-Z6-DSs" secondAttribute="centerX" type="default" id="0rd-jh-yoe"/>
-                            <constraint firstItem="KFc-lf-fdK" firstAttribute="centerX" secondItem="BLz-ot-xx5" secondAttribute="centerX" type="default" id="1b4-mg-UjE"/>
-                            <constraint firstItem="BLz-ot-xx5" firstAttribute="leading" secondItem="Y4l-P7-kUx" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="5M6-vx-wXy"/>
                             <constraint firstItem="Kds-nU-xd3" firstAttribute="centerX" secondItem="tyK-39-29E" secondAttribute="centerX" type="default" id="Et8-sc-Gx9"/>
+                            <constraint firstItem="KFc-lf-fdK" firstAttribute="top" secondItem="t7E-Z6-DSs" secondAttribute="top" constant="50" id="FCi-cP-yJO"/>
+                            <constraint firstItem="KFc-lf-fdK" firstAttribute="centerX" secondItem="t7E-Z6-DSs" secondAttribute="centerX" type="default" id="Glr-9o-TLV"/>
+                            <constraint firstItem="Kds-nU-xd3" firstAttribute="top" secondItem="t7E-Z6-DSs" secondAttribute="top" constant="87" id="Jbh-K2-KQf"/>
                             <constraint firstAttribute="bottom" secondItem="tyK-39-29E" secondAttribute="bottom" constant="72" id="WJC-Na-pCA"/>
-                            <constraint firstItem="BLz-ot-xx5" firstAttribute="top" secondItem="t7E-Z6-DSs" secondAttribute="top" constant="36" id="XyQ-aK-4PX"/>
-                            <constraint firstItem="KFc-lf-fdK" firstAttribute="top" secondItem="t7E-Z6-DSs" secondAttribute="top" constant="84" id="Zym-H0-vQg"/>
-                            <constraint firstItem="Y4l-P7-kUx" firstAttribute="top" secondItem="t7E-Z6-DSs" secondAttribute="top" constant="15" id="dvZ-Bv-h2P"/>
-                            <constraint firstItem="Y4l-P7-kUx" firstAttribute="leading" secondItem="t7E-Z6-DSs" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hLn-Og-5Ja"/>
-                            <constraint firstItem="Kds-nU-xd3" firstAttribute="centerX" secondItem="KFc-lf-fdK" secondAttribute="centerX" type="default" id="hS0-ar-sU5"/>
-                            <constraint firstItem="Kds-nU-xd3" firstAttribute="top" secondItem="t7E-Z6-DSs" secondAttribute="top" constant="131" id="r8x-Af-LGf"/>
+                            <constraint firstItem="Kds-nU-xd3" firstAttribute="centerX" secondItem="KFc-lf-fdK" secondAttribute="centerX" type="default" id="WOj-Un-9Z2"/>
+                            <constraint firstItem="BLz-ot-xx5" firstAttribute="centerX" secondItem="KFc-lf-fdK" secondAttribute="centerX" type="default" id="jwc-X1-TQQ"/>
+                            <constraint firstItem="BLz-ot-xx5" firstAttribute="top" secondItem="t7E-Z6-DSs" secondAttribute="top" constant="14" id="tvG-3P-eWA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mPh-6R-g99"/>
@@ -184,19 +167,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tz-I9-uxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="682" y="90"/>
+            <point key="canvasLocation" x="1208" y="90"/>
         </scene>
         <!--Movie Player View Controller-->
         <scene sceneID="0om-bW-pfo">
             <objects>
                 <viewController id="jcG-Jq-OBu" customClass="MoviePlayerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zCf-EO-rcd">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWR-yM-A97">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWR-yM-A97"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9Q-tX-1mn">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Stop">
@@ -225,41 +206,45 @@
                                     <action selector="onPlay:" destination="n2l-FN-mOH" eventType="touchUpInside" id="m1o-sm-o2B"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvQ-Ah-w57">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="back">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onBack:" destination="jcG-Jq-OBu" eventType="touchUpInside" id="azX-L2-Q0X"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="WvQ-Ah-w57" firstAttribute="leading" secondItem="lHi-hQ-8Bf" secondAttribute="leading" type="default" id="1my-qW-jQs"/>
                             <constraint firstAttribute="trailing" secondItem="M9Q-tX-1mn" secondAttribute="trailing" constant="11" id="5Rq-Wf-yrh"/>
-                            <constraint firstItem="uWR-yM-A97" firstAttribute="top" secondItem="zCf-EO-rcd" secondAttribute="top" constant="117" id="FsI-Xp-170"/>
-                            <constraint firstItem="uWR-yM-A97" firstAttribute="trailing" secondItem="zCf-EO-rcd" secondAttribute="trailing" type="default" id="MVp-XD-ysf"/>
-                            <constraint firstItem="WvQ-Ah-w57" firstAttribute="top" secondItem="zCf-EO-rcd" secondAttribute="top" constant="7" id="Y1l-BF-Xbg"/>
+                            <constraint firstAttribute="bottom" secondItem="uWR-yM-A97" secondAttribute="bottom" constant="228" id="JMG-Zv-ux9"/>
+                            <constraint firstItem="uWR-yM-A97" firstAttribute="trailing" secondItem="zCf-EO-rcd" secondAttribute="trailing" type="default" id="MKz-iA-BKS"/>
+                            <constraint firstItem="lHi-hQ-8Bf" firstAttribute="leading" secondItem="zCf-EO-rcd" secondAttribute="leading" constant="13" id="X7x-lW-9iO"/>
                             <constraint firstItem="lHi-hQ-8Bf" firstAttribute="baseline" secondItem="M9Q-tX-1mn" secondAttribute="baseline" type="default" id="aBc-yT-A0D"/>
                             <constraint firstAttribute="bottom" secondItem="lHi-hQ-8Bf" secondAttribute="bottom" constant="34" id="acc-e0-dlg"/>
-                            <constraint firstAttribute="bottom" secondItem="uWR-yM-A97" secondAttribute="bottom" constant="177" id="fxr-lZ-Rv6"/>
-                            <constraint firstItem="WvQ-Ah-w57" firstAttribute="leading" secondItem="zCf-EO-rcd" secondAttribute="leading" constant="13" id="kSw-Oi-sVa"/>
+                            <constraint firstItem="uWR-yM-A97" firstAttribute="top" secondItem="zCf-EO-rcd" secondAttribute="top" constant="15" id="fet-Jz-OGb"/>
                             <constraint firstItem="uWR-yM-A97" firstAttribute="leading" secondItem="zCf-EO-rcd" secondAttribute="leading" type="default" id="pCL-fJ-qG9"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="movieView" destination="uWR-yM-A97" id="apg-kR-yOx"/>
+                        <outlet property="movieSubPlay" destination="uWR-yM-A97" id="Vq6-at-Uo9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUU-HJ-XvZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105" y="90"/>
+            <point key="canvasLocation" x="1631" y="90"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5c1-vY-KZJ">
+            <objects>
+                <navigationController id="7HM-9Z-nU1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c6k-F0-T8t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="qQC-Jh-K0f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khh-Yy-jfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="27"/>
         </scene>
     </scenes>
     <classes>
@@ -277,6 +262,7 @@
                 <relationship kind="action" name="onBack:"/>
                 <relationship kind="action" name="onPlay:"/>
                 <relationship kind="action" name="onStop:"/>
+                <relationship kind="outlet" name="movieSubPlay" candidateClass="UIView"/>
                 <relationship kind="outlet" name="movieView" candidateClass="UIView"/>
             </relationships>
         </class>

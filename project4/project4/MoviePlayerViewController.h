@@ -14,6 +14,7 @@
 {
     MPMoviePlayerController *moviePlayer;
     IBOutlet UIView *movieView;
+    IBOutlet UIView *movieSubPlay;
 }
 
 @property MovieInfo *passedMovieDetail;

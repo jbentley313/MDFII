@@ -97,7 +97,7 @@
     MovieInfo *Movie15 = [[MovieInfo alloc] initWithMovieName:@"The Dark Knight Rises"
                                                        mImage:@"darknight.png"
                                                        mTimes:[NSArray arrayWithObjects:@" 4:50pm ", @" 7:00pm ", @" 8:50pm ",nil]
-                                                  trailerLink:@"https://dl.dropboxusercontent.com/u/10778637/1qw3ey98k.m4v"];
+                                                  trailerLink:@"https://dl.dropboxusercontent.com/u/10778637/33wwaasgyuuj87.m4v"];
     
     //array of movies
     movieArray = [[NSArray alloc] initWithObjects:Movie1, Movie2, Movie3, Movie4, Movie5, Movie6, Movie7, Movie8, Movie9, Movie10, Movie11, Movie12, Movie13, Movie14, Movie15, nil];
@@ -192,6 +192,10 @@
     TheaterInfo *passedTheater = [theaterArray objectAtIndex:section];
     
     UILabel *headerTheaterLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0f, 20.0f, 100.0f, 20.0f)];
+    
+    
+    
+    
     UILabel *headerLocLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0f, 25.0f, 100.0f, 50.0f)];
     
     

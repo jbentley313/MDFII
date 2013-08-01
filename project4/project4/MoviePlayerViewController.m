@@ -42,10 +42,12 @@
     
     
     if (moviePlayer != nil) {
-        [movieView addSubview:moviePlayer.view];
         
-        moviePlayer.view.frame = CGRectMake(0.0f, 0.0f, movieView.frame.size.width , movieView.frame.size.height);
         
+//        moviePlayer.view.frame = CGRectMake(0.0f, 0.0f, movieSubPlay.frame.size.width , movieSubPlay.frame.size.height);
+        
+        moviePlayer.view.frame = movieSubPlay.frame;
+        [movieSubPlay addSubview:moviePlayer.view];
         
         moviePlayer.fullscreen = false;
         moviePlayer.controlStyle = MPMovieControlStyleNone;
