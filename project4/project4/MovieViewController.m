@@ -7,6 +7,7 @@
 //
 
 #import "MovieViewController.h"
+#import "MoviePlayerViewController.h"
 //#import <MediaPlayer/MediaPlayer.h>
 
 @interface MovieViewController ()
@@ -40,14 +41,14 @@
     
     
     NSArray *movieTimes = passedMovie.movieTimes;
-    NSMutableString * result = [[NSMutableString alloc] init];
+    NSMutableString * formattedMovieTimes = [[NSMutableString alloc] init];
     for (NSObject * movieTimeObjs in movieTimes)
     {
-        [result appendString:[movieTimeObjs description]];
+        [formattedMovieTimes appendString:[movieTimeObjs description]];
     }
     
     
-    movieDetailTimes.text = result;
+    movieDetailTimes.text = formattedMovieTimes;
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -56,23 +57,29 @@
 
 -(IBAction)onClick:(id)sender;
 {
-    //movie trailer
-    fileUrl = [NSURL URLWithString:passedMovie.movieTrailerLink];
-    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:fileUrl];
     
-    if (moviePlayer != nil) {
-        [self.view addSubview:moviePlayer.view];
-        
-        moviePlayer.fullscreen = true;
-        [moviePlayer play];
-//        [moviePlayer stop];
-    }
 }
 
 -(IBAction)onBack:(id)sender;
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+//segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"playItSegue"]) {
+
+        
+        MoviePlayerViewController *movPlayer = (MoviePlayerViewController *)segue.destinationViewController;
+        
+        movPlayer.passedMovieDetail = self.passedMovie;
+        
+        
+    }
+}
+
+
 
 
 - (void)didReceiveMemoryWarning

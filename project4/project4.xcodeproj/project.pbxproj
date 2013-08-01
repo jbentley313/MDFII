@@ -26,6 +26,7 @@
 		BB2763B117A833FE006B0A3C /* arclight.png in Resources */ = {isa = PBXBuildFile; fileRef = BB2763B017A833FE006B0A3C /* arclight.png */; };
 		BB2763B417A83417006B0A3C /* capt.png in Resources */ = {isa = PBXBuildFile; fileRef = BB2763B217A83417006B0A3C /* capt.png */; };
 		BB2763B517A83417006B0A3C /* loews.png in Resources */ = {isa = PBXBuildFile; fileRef = BB2763B317A83417006B0A3C /* loews.png */; };
+		BB68860217AA1E8500DD00E9 /* MoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB68860117AA1E8500DD00E9 /* MoviePlayerViewController.m */; };
 		BB708ACE17A5DAB300BFCDBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB708ACD17A5DAB300BFCDBF /* UIKit.framework */; };
 		BB708AD017A5DAB300BFCDBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB708ACF17A5DAB300BFCDBF /* Foundation.framework */; };
 		BB708AD217A5DAB300BFCDBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB708AD117A5DAB300BFCDBF /* CoreGraphics.framework */; };
@@ -64,6 +65,8 @@
 		BB2763B017A833FE006B0A3C /* arclight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arclight.png; sourceTree = "<group>"; };
 		BB2763B217A83417006B0A3C /* capt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = capt.png; sourceTree = "<group>"; };
 		BB2763B317A83417006B0A3C /* loews.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loews.png; sourceTree = "<group>"; };
+		BB68860017AA1E8500DD00E9 /* MoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayerViewController.h; sourceTree = "<group>"; };
+		BB68860117AA1E8500DD00E9 /* MoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviePlayerViewController.m; sourceTree = "<group>"; };
 		BB708ACA17A5DAB300BFCDBF /* project4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB708ACD17A5DAB300BFCDBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BB708ACF17A5DAB300BFCDBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -175,6 +178,8 @@
 				BBC8D1A617A746E0003253E0 /* CustomMovieCell.m */,
 				BB01E64117A8AF0B00B008E3 /* MovieViewController.h */,
 				BB01E64217A8AF0B00B008E3 /* MovieViewController.m */,
+				BB68860017AA1E8500DD00E9 /* MoviePlayerViewController.h */,
+				BB68860117AA1E8500DD00E9 /* MoviePlayerViewController.m */,
 			);
 			path = project4;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				BB708AF717A5E16D00BFCDBF /* TheaterInfo.m in Sources */,
 				BBC8D1A717A746E0003253E0 /* CustomMovieCell.m in Sources */,
 				BB01E64317A8AF0B00B008E3 /* MovieViewController.m in Sources */,
+				BB68860217AA1E8500DD00E9 /* MoviePlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

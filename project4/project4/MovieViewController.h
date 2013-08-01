@@ -12,20 +12,21 @@
 
 @interface MovieViewController : UIViewController 
 {
-    MPMoviePlayerController *moviePlayer;
+    
     UILabel *movieDetailTitle;
     UILabel *movieDetailTimes;
     UIImageView *movieDetailImage;
     NSURL *fileUrl;
 }
 
--(IBAction)onClick:(id)sender;
--(IBAction)onBack:(id)sender;
+
 
 @property(strong) MovieInfo *passedMovie;
 @property(strong, nonatomic) IBOutlet UILabel *movieDetailTitle;
 @property(strong, nonatomic) IBOutlet UILabel *movieDetailTimes;
 @property(strong, nonatomic) IBOutlet UIImageView *movieDetailImage;
 //@property(strong) MPMoviePlayerController *moviePlayer;
+
+-(IBAction)onClick:(id)sender;
 
 @end

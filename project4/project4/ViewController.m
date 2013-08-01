@@ -27,7 +27,7 @@
     MovieInfo *Movie1 = [[MovieInfo alloc] initWithMovieName:@"Touching the Void"
                                                       mImage:@"ttvoid.png"
                                                       mTimes:[NSArray arrayWithObjects:@" 6:00pm ", @" 7:00pm ", @" 8:20pm ",nil]
-                                                 trailerLink:@"https://dl.dropboxusercontent.com/u/10778637/REEEEswe4322dr5rS.m4v"];
+                                                 trailerLink:@"https://dl.dropboxusercontent.com/u/10778637/1qw3ey98k.m4v"];
     
     MovieInfo *Movie2 = [[MovieInfo alloc] initWithMovieName:@"The Avengers"
                                                       mImage:@"avg.png"
@@ -136,14 +136,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     
-     NSString *CellIdentifier = @"movieCell";
+    NSString *CellIdentifier = @"movieCell";
     
-        
+    
     CustomMovieCell *cell = [movieTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     
     
-
+    
     TheaterInfo *passedTheater = [theaterArray objectAtIndex:indexPath.section];
     
     NSString *movieTitle = [[passedTheater.arrayOfMovies objectAtIndex:indexPath.row] movieName];
@@ -242,9 +242,6 @@
         
     }
 }
-
-
-
 
 
 
